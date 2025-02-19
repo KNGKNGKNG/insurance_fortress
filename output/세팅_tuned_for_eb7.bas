@@ -1,33 +1,33 @@
-Sub ë‚©ë©´ìœ„í—˜ë¥ ì¸ì‹()
-  For youl = 0 To 1
-    For sex = 1 To 2 'ì„±ë³„
-      For x = 0 To 110 'ê°€ì…ë‚˜ì´+ê²½ê³¼ê¸°ê°„
-        ì§ˆë³‘(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 170) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 40), 1)
-        ì•”(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 52) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
-        ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 108) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 14), 1)
-        ê¸‰ì„±(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 122) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 27), 1)
-        ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 410) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 79), 1)
-        ìœ ë°©ì•”(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 884) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
-        ê¸°íƒ€(youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 54) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
-        ê°‘ìƒì„ (youl, 1, sex, 1, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 56) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
-        For lev = 1 To 3 'ê¸‰ìˆ˜
-          ìƒí•´(youl, 1, sex, lev, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 8 + 2 * (lev - 1)) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 40), 1)
-        Next lev
-      Next x
-    Next sex
-  Next youl
+Sub ³³¸éÀ§Çè·üÀÎ½Ä()
+For youl = 0 To 1
+For sex = 1 To 2 '¼ºº°
+For x = 0 To 110 '°¡ÀÔ³ªÀÌ+°æ°ú±â°£
+Áúº´(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 170) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 40), 1)
+¾Ï(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 52) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
+³úÁ¹Áß(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 108) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 14), 1)
+±Ş¼º(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 122) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 27), 1)
+»óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 410) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 79), 1)
+À¯¹æ¾Ï(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 884) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
+±âÅ¸(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 54) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
+°©»ó¼±(youl, 1, sex, 1, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 56) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 1), 1)
+For lev = 1 To 3 '±Ş¼ö
+»óÇØ(youl, 1, sex, lev, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 8 + 2 * (lev - 1)) * IIf((jong = 1 Or jong = 2) And youl <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + 40), 1)
+Next lev
+Next x
+Next sex
+Next youl
 
 End Sub
-Sub ì •ê¸°ì‚¬ë§ë¥ ì¸ì‹()
-    For sex = 1 To 2 'ì„±ë³„
-      For lev = 1 To 1 'ê¸‰ìˆ˜
-        For x = 0 To 110 'ê°€ì…ë‚˜ì´+ê²½ê³¼ê¸°ê°„
-          qxë¬´ë°°ë‹¹(sex, lev, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + 6 + 2 * (lev - 1))
-        Next x
-      Next lev
-    Next sex
+Sub Á¤±â»ç¸Á·üÀÎ½Ä()
+For sex = 1 To 2 '¼ºº°
+For lev = 1 To 1 '±Ş¼ö
+For x = 0 To 110 '°¡ÀÔ³ªÀÌ+°æ°ú±â°£
+qx¹«¹è´ç(sex, lev, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + 6 + 2 * (lev - 1))
+Next x
+Next lev
+Next sex
 End Sub
-Sub ì‚¬ì—…ë¹„ìœ¨ì¸ì‹()
+Sub »ç¾÷ºñÀ²ÀÎ½Ä()
 For youl = youl_s To youl_e
 For renew = renew_s To renew_e
 
@@ -35,114 +35,114 @@ For premperiod = 1 To 30
 If nn = 0 Then
 alpha2(n, youl, 0, 0) = 0
 Else
-  Select Case jong
-    Case 1
-    alpha2(n, youl, renew, premperiod) = Sheets("ì˜ˆì‚¬ë¹„1ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
-    Case 2
-    alpha2(n, youl, renew, premperiod) = Sheets("ì˜ˆì‚¬ë¹„2ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
-    Case 3
-    alpha2(n, youl, renew, premperiod) = Sheets("ì˜ˆì‚¬ë¹„3ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
-    Case 4
-    alpha2(n, youl, renew, premperiod) = Sheets("ì˜ˆì‚¬ë¹„4ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
-  End Select
+Select Case jong
+Case 1
+alpha2(n, youl, renew, premperiod) = Sheets("¿¹»çºñ1Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
+Case 2
+alpha2(n, youl, renew, premperiod) = Sheets("¿¹»çºñ2Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
+Case 3
+alpha2(n, youl, renew, premperiod) = Sheets("¿¹»çºñ3Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
+Case 4
+alpha2(n, youl, renew, premperiod) = Sheets("¿¹»çºñ4Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 34 - premperiod) / 100
+End Select
 End If
 Next premperiod
 
 If nn = 0 Then
 beta(n, youl, renew) = 0
 Else
-  Select Case jong
-    Case 1
-    beta(n, youl, renew) = Sheets("ì˜ˆì‚¬ë¹„1ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
-    Case 2
-    beta(n, youl, renew) = Sheets("ì˜ˆì‚¬ë¹„2ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
-    Case 3
-    beta(n, youl, renew) = Sheets("ì˜ˆì‚¬ë¹„3ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
-    Case 4
-    beta(n, youl, renew) = Sheets("ì˜ˆì‚¬ë¹„4ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
-  End Select
+Select Case jong
+Case 1
+beta(n, youl, renew) = Sheets("¿¹»çºñ1Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
+Case 2
+beta(n, youl, renew) = Sheets("¿¹»çºñ2Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
+Case 3
+beta(n, youl, renew) = Sheets("¿¹»çºñ3Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
+Case 4
+beta(n, youl, renew) = Sheets("¿¹»çºñ4Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), 37) / 100
+End Select
 End If
 
 For mangi_k = mangi_k_s To mangi_k_e
 For ipno_n = ipno_n_s To ipno_n_e
 
 If nn = 0 Then
-  alpha1(n, youl, 0, 0, 0) = 0
+alpha1(n, youl, 0, 0, 0) = 0
 Else
-  Select Case jong
-    Case 1
-    alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("ì˜ˆì‚¬ë¹„1ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
-    Case 2
-    alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("ì˜ˆì‚¬ë¹„2ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
-    Case 3
-    alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("ì˜ˆì‚¬ë¹„3ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
-    Case 4
-    alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("ì˜ˆì‚¬ë¹„4ì¢…").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
-    
-  End Select
+Select Case jong
+Case 1
+alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("¿¹»çºñ1Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
+Case 2
+alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("¿¹»çºñ2Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
+Case 3
+alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("¿¹»çºñ3Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
+Case 4
+alpha1(n, youl, renew, mangi_k, ipno_n) = Sheets("¿¹»çºñ4Á¾").Cells(6 + nn + IIf(renew = 2, 1, 0), IIf(renew = 0, IIf(mangi_k <> 0, 37 - mangi_k, 37 - ipno_n), 36))
+
+End Select
 End If
-beta5 = Sheets("ì‚°ì¶œ").Range("J25") 'ì˜ì—…ë³´í—˜ë£ŒëŒ€ë¹„ ìˆ˜ê¸ˆë¹„
-ce = Sheets("ì‚°ì¶œ").Range("J26") 'ì†í•´ì¡°ì‚¬ë¹„
-beta1 = Sheets("ì‚°ì¶œ").Range("J27") '(ë‚©ì…í›„)ì˜ì—…ë³´í—˜ë£ŒëŒ€ë¹„ ìˆ˜ê¸ˆë¹„
-ce1 = Sheets("ì‚°ì¶œ").Range("J28") '(ë‚©ì…í›„)ì†í•´ì¡°ì‚¬ë¹„
+beta5 = Sheets("»êÃâ").Range("J25") '¿µ¾÷º¸Çè·á´ëºñ ¼ö±İºñ
+ce = Sheets("»êÃâ").Range("J26") '¼ÕÇØÁ¶»çºñ
+beta1 = Sheets("»êÃâ").Range("J27") '(³³ÀÔÈÄ)¿µ¾÷º¸Çè·á´ëºñ ¼ö±İºñ
+ce1 = Sheets("»êÃâ").Range("J28") '(³³ÀÔÈÄ)¼ÕÇØÁ¶»çºñ
 Next ipno_n
 Next mangi_k
 Next renew
 Next youl
 
 End Sub
-Sub í•´ì§€ìœ¨ì¸ì‹()
+Sub ÇØÁöÀ²ÀÎ½Ä()
 For ipno_n = 0 To 4
 Select Case ipno_n
-    Case 1
-    premperiod = 10
-    Case 2
-    premperiod = 15
-    Case 3
-    premperiod = 20
-    Case 4
-    premperiod = 30
+Case 1
+premperiod = 10
+Case 2
+premperiod = 15
+Case 3
+premperiod = 20
+Case 4
+premperiod = 30
 End Select
-For ë¬´í•´ì§€ = 0 To 1
+For ¹«ÇØÁö = 0 To 1
 For i = 0 To 110
-      If ë¬´í•´ì§€ = 1 Then
-      If jong = 2 Or jong = 4 Or ipno_n = 0 Then
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = 0
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0
-      ElseIf i = premperiod - 2 Then 'ì™„ë‚©2ë…„ì „
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = Sheets("í•´ì§€ìœ¨").Cells(5, 19)
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0 'í•´ì§€í™˜ê¸‰ê¸ˆ ì§€ê¸‰ë¥ 
-      ElseIf i = premperiod - 1 Then 'ì™„ë‚©1ë…„ì „
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = Sheets("í•´ì§€ìœ¨").Cells(5, 20)
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0 'í•´ì§€í™˜ê¸‰ê¸ˆ ì§€ê¸‰ë¥ 
-      ElseIf i = premperiod Then 'ë‚©ì…í›„1ë…„ì°¨
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = Sheets("í•´ì§€ìœ¨").Cells(5, 21)
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0.5 'í•´ì§€í™˜ê¸‰ê¸ˆ ì§€ê¸‰ë¥ 
-      ElseIf i >= premperiod + 1 Then 'ë‚©ì…í›„1ë…„ì´ˆê³¼
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = Sheets("í•´ì§€ìœ¨").Cells(5, 22)
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0.5 'í•´ì§€í™˜ê¸‰ê¸ˆ ì§€ê¸‰ë¥ 
-      Else 'ê·¸ì™¸ë‚©ì…ì¤‘
-        í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = Sheets("í•´ì§€ìœ¨").Cells(3 + i, 2)
-        w_rate(ë¬´í•´ì§€, ipno_n, i) = 0 'í•´ì§€í™˜ê¸‰ê¸ˆ ì§€ê¸‰ë¥ 
-      End If
-      ElseIf ë¬´í•´ì§€ = 0 Then
-      í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) = 0
-      w_rate(ë¬´í•´ì§€, ipno_n, i) = 0
-      End If
+If ¹«ÇØÁö = 1 Then
+If jong = 2 Or jong = 4 Or ipno_n = 0 Then
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = 0
+w_rate(¹«ÇØÁö, ipno_n, i) = 0
+ElseIf i = premperiod - 2 Then '¿Ï³³2³âÀü
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = Sheets("ÇØÁöÀ²").Cells(5, 19)
+w_rate(¹«ÇØÁö, ipno_n, i) = 0 'ÇØÁöÈ¯±Ş±İ Áö±Ş·ü
+ElseIf i = premperiod - 1 Then '¿Ï³³1³âÀü
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = Sheets("ÇØÁöÀ²").Cells(5, 20)
+w_rate(¹«ÇØÁö, ipno_n, i) = 0 'ÇØÁöÈ¯±Ş±İ Áö±Ş·ü
+ElseIf i = premperiod Then '³³ÀÔÈÄ1³âÂ÷
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = Sheets("ÇØÁöÀ²").Cells(5, 21)
+w_rate(¹«ÇØÁö, ipno_n, i) = 0.5 'ÇØÁöÈ¯±Ş±İ Áö±Ş·ü
+ElseIf i >= premperiod + 1 Then '³³ÀÔÈÄ1³âÃÊ°ú
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = Sheets("ÇØÁöÀ²").Cells(5, 22)
+w_rate(¹«ÇØÁö, ipno_n, i) = 0.5 'ÇØÁöÈ¯±Ş±İ Áö±Ş·ü
+Else '±×¿Ü³³ÀÔÁß
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = Sheets("ÇØÁöÀ²").Cells(3 + i, 2)
+w_rate(¹«ÇØÁö, ipno_n, i) = 0 'ÇØÁöÈ¯±Ş±İ Áö±Ş·ü
+End If
+ElseIf ¹«ÇØÁö = 0 Then
+ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) = 0
+w_rate(¹«ÇØÁö, ipno_n, i) = 0
+End If
 Next i
-Next ë¬´í•´ì§€
+Next ¹«ÇØÁö
 Next ipno_n
 End Sub
-Sub ì¡°ì •ê³„ìˆ˜ì¸ì‹()
+Sub Á¶Á¤°è¼öÀÎ½Ä()
 For youl = youl_s To youl_e
 For sex = sex_s To sex_e
-For x = 0 To 110 'ê°€ì…ë‚˜ì´+ê²½ê³¼ê¸°ê°„
-  ê³„ìˆ˜(youl, n, sex, x) = IIf((jong = 1 Or jong = 2) And si <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + si), 1) '(kkê°¯ìˆ˜, iê²½ê³¼ê¸°ê°„, sexì„±ë³„, levê¸‰ìˆ˜, age(ë‚˜ì´), í‚¤ê°’(n) )
+For x = 0 To 110 '°¡ÀÔ³ªÀÌ+°æ°ú±â°£
+°è¼ö(youl, n, sex, x) = IIf((jong = 1 Or jong = 2) And si <> 0, Sheets("SI").Cells(x + 6, Application.Max((youl - 1), 0) * 2 + sex + si), 1) '(kk°¹¼ö, i°æ°ú±â°£, sex¼ºº°, lev±Ş¼ö, age(³ªÀÌ), Å°°ª(n) )
 Next x
 Next sex
 Next youl
 End Sub
-Sub ìœ„í—˜ë¥ ì¸ì‹()
+Sub À§Çè·üÀÎ½Ä()
 For sex = sex_s To sex_e
 For lev = 1 To lev_e
 For kk = 1 To n_rate_k
@@ -150,9 +150,9 @@ For x = 0 To 110
 
 Select Case n_rate
 Case 11
-  qxì‚°ì¶œ(n, kk, sex, lev, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, (sex - 1) * 5 + n_rate_c(1) + 2 * (lev - 1) + kk) '(kkì§„ë‹¨í›„ ê²½ê³¼ê¸°ê°„, iê²½ê³¼ê¸°ê°„, sexì„±ë³„, levê¸‰ìˆ˜, age(ë‚˜ì´), í‚¤ê°’(n) )
+qx»êÃâ(n, kk, sex, lev, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, (sex - 1) * 5 + n_rate_c(1) + 2 * (lev - 1) + kk) '(kkÁø´ÜÈÄ °æ°ú±â°£, i°æ°ú±â°£, sex¼ºº°, lev±Ş¼ö, age(³ªÀÌ), Å°°ª(n) )
 Case Else
-  qxì‚°ì¶œ(n, kk, sex, lev, x) = Sheets("ì ìš©ìœ„í—˜ë¥ ").Cells(x + 6, sex + n_rate_c(kk) + 2 * (lev - 1))
+qx»êÃâ(n, kk, sex, lev, x) = Sheets("Àû¿ëÀ§Çè·ü").Cells(x + 6, sex + n_rate_c(kk) + 2 * (lev - 1))
 End Select
 
 Next x

@@ -1,398 +1,398 @@
 Option Explicit
 
-Public start As Integer, last As Integer, ì‚°ì¶œì¢…ë¥˜ As Integer, sì‚°ì¶œì—¬ë¶€ As Integer, sì‚¬ìš©ì—¬ë¶€ As Integer, youl_s As Integer, youl_e As Integer, youl As Integer, a As Integer, b As Integer, c As Integer, ë¬´í•´ì§€ As Integer
+Public start As Integer, last As Integer, »êÃâÁ¾·ù As Integer, s»êÃâ¿©ºÎ As Integer, s»ç¿ë¿©ºÎ As Integer, youl_s As Integer, youl_e As Integer, youl As Integer, a As Integer, b As Integer, c As Integer, ¹«ÇØÁö As Integer
 Public alpha1(1163, 6, 2, 3, 4) As Double, alpha2(1163, 6, 2, 30) As Double, beta(1163, 6, 2) As Double, beta5 As Double, ce As Double, beta1 As Double, ce1 As Double
-Public z(110) As Double, ê°±ì‹ sê°’(1163, 6) As Double, sê°’(1163, 2, 6, 3, 3, 4) As Double, ê³„ìˆ˜(6, 1163, 2, 110) As Double, qxì‚°ì¶œ(1163, 5, 2, 3, 110) As Double, qxë¬´ë°°ë‹¹(2, 3, 110) As Double, s As Double, ìƒí•´(6, 5, 2, 3, 110) As Double, ì§ˆë³‘(6, 5, 2, 3, 110) As Double, ì•”(6, 5, 2, 3, 110) As Double, ë‡Œì¡¸ì¤‘(6, 5, 2, 3, 110) As Double, ê¸‰ì„±(6, 5, 2, 3, 110) As Double, ê¸°ê°‘(6, 5, 2, 3, 110) As Double, ìƒí•´ì„±ë‡Œì¶œí˜ˆ(6, 5, 2, 3, 110) As Double, ìœ ë°©ì•”(6, 5, 2, 3, 110) As Double, ê¸°íƒ€(6, 5, 2, 3, 110) As Double, ê°‘ìƒì„ (6, 5, 2, 3, 110) As Double
-Public dx(5, 110) As Double, dxë‚©ë©´(5, 110) As Double, dxë¬´ë°°ë‹¹(110) As Double, AA As Double, dx1(5, 110) As Double, dx2(5, 110) As Double, dx_í‘œì¤€(5, 110) As Double, dxë‚©ë©´_í‘œì¤€(5, 110) As Double, dx1_í‘œì¤€(5, 110) As Double, dx2_í‘œì¤€(5, 110) As Double
-Public cx(5, 110) As Double, cx1(5, 110) As Double, cx2(5, 110) As Double, cxë¬´ë°°ë‹¹(110) As Double, cx_í‘œì¤€(5, 110) As Double, cx1_í‘œì¤€(5, 110) As Double, cx2_í‘œì¤€(5, 110) As Double
+Public z(110) As Double, °»½Ås°ª(1163, 6) As Double, s°ª(1163, 2, 6, 3, 3, 4) As Double, °è¼ö(6, 1163, 2, 110) As Double, qx»êÃâ(1163, 5, 2, 3, 110) As Double, qx¹«¹è´ç(2, 3, 110) As Double, s As Double, »óÇØ(6, 5, 2, 3, 110) As Double, Áúº´(6, 5, 2, 3, 110) As Double, ¾Ï(6, 5, 2, 3, 110) As Double, ³úÁ¹Áß(6, 5, 2, 3, 110) As Double, ±Ş¼º(6, 5, 2, 3, 110) As Double, ±â°©(6, 5, 2, 3, 110) As Double, »óÇØ¼º³úÃâÇ÷(6, 5, 2, 3, 110) As Double, À¯¹æ¾Ï(6, 5, 2, 3, 110) As Double, ±âÅ¸(6, 5, 2, 3, 110) As Double, °©»ó¼±(6, 5, 2, 3, 110) As Double
+Public dx(5, 110) As Double, dx³³¸é(5, 110) As Double, dx¹«¹è´ç(110) As Double, AA As Double, dx1(5, 110) As Double, dx2(5, 110) As Double, dx_Ç¥ÁØ(5, 110) As Double, dx³³¸é_Ç¥ÁØ(5, 110) As Double, dx1_Ç¥ÁØ(5, 110) As Double, dx2_Ç¥ÁØ(5, 110) As Double
+Public cx(5, 110) As Double, cx1(5, 110) As Double, cx2(5, 110) As Double, cx¹«¹è´ç(110) As Double, cx_Ç¥ÁØ(5, 110) As Double, cx1_Ç¥ÁØ(5, 110) As Double, cx2_Ç¥ÁØ(5, 110) As Double
 Public rate(4) As Double, v As Double
-Public txt_num As Integer, i As Integer, j As Integer, j_e As Integer, jj As Integer, n As Integer, k As Integer, kk As Integer, kkk As Integer, no As Integer, t As Integer, irate As Integer, x As Integer, mangi_k As Integer, mangi_k_s As Integer, mangi_k_e As Integer, ë‚©ì…ë©´ì œ As Integer
+Public txt_num As Integer, i As Integer, j As Integer, j_e As Integer, jj As Integer, n As Integer, k As Integer, kk As Integer, kkk As Integer, no As Integer, t As Integer, irate As Integer, x As Integer, mangi_k As Integer, mangi_k_s As Integer, mangi_k_e As Integer, ³³ÀÔ¸éÁ¦ As Integer
 Public face As Long
-Public sex As Integer, sex_check As Integer, sex_s As Integer, sex_e As Integer, cl_s As Integer, cl_e As Integer, cl As Integer, drv_s As Integer, drv_e As Integer, drv As Integer, lev_e As Integer, lev As Integer, age_s As Integer, age_e As Integer, age As Integer, age_s_check As Integer, renew_s As Integer, renew_e As Integer, renew As Integer, renewperi As Integer, renewperi_s As Integer, renewperi_e As Integer, ê°±ì‹ ì£¼ê¸° As Integer, si As Integer
+Public sex As Integer, sex_check As Integer, sex_s As Integer, sex_e As Integer, cl_s As Integer, cl_e As Integer, cl As Integer, drv_s As Integer, drv_e As Integer, drv As Integer, lev_e As Integer, lev As Integer, age_s As Integer, age_e As Integer, age As Integer, age_s_check As Integer, renew_s As Integer, renew_e As Integer, renew As Integer, renewperi As Integer, renewperi_s As Integer, renewperi_e As Integer, °»½ÅÁÖ±â As Integer, si As Integer
 Public ipno_p_s As Integer, ipno_p_e As Integer, ipno_p As Integer, ipno_m_s As Integer, ipno_m_e As Integer, ipno_m As Integer, ipno_n_e As Integer, ipno_n As Integer, mangi_type As Integer, mangi As Integer, ipno_n_s As Integer
 Public insperiod As Integer, premperiod As Integer, handoprem As Integer
-Public nxë‚©ë©´(110) As Double, nxë‚©ë©´_í‘œì¤€(110) As Double, nx(110) As Double, nx_í‘œì¤€(110) As Double, nxí•œë„(110) As Double, nxì›”ë‚© As Double, nxë¬´ë°°ë‹¹ As Double, nxì›”ë‚©_í‘œì¤€ As Double, nxì›”ë‚©ë¬´ë°°ë‹¹ As Double, bunja_p As Double, mx(110) As Double, bunja_p_í‘œì¤€ As Double, mx_í‘œì¤€(110) As Double, mxë¬´ë°°ë‹¹ As Double, mxsum As Double, nxsum As Double, nxsum_k As Double, mxsum_í‘œì¤€ As Double, nxsum_í‘œì¤€ As Double, nxsum_k_í‘œì¤€ As Double
-Public ìˆœì—°ë‚©ë¬´ë°°ë‹¹ As Double, ìˆœì›”ë‚©ë¬´ë°°ë‹¹ As Double, ìˆœì—°ë‚©(1) As Double, ìˆœì›”ë‚©(1) As Double, ì˜ì—…ì—°ë‚© As Double, ì˜ì—…ì›”ë‚© As Double, ìˆœì—°ë‚©_í‘œì¤€(1) As Double, ìˆœì›”ë‚©_í‘œì¤€(1) As Double, ì˜ì—…ì—°ë‚©_í‘œì¤€ As Double, ì˜ì—…ì›”ë‚©_í‘œì¤€ As Double
-Public ìˆœí•œë„(1) As Long, ìˆœí•œë„_í‘œì¤€(1) As Double As Long, ìˆœí•œë„1ì›(1) As Long, ìˆœí•œë„1ì›_í‘œì¤€(1) As Long As Long, í•´ì•½ê³µì œê³„ìˆ˜ As Long, í•´ì§€ê³µì œê¸°ê°„ As Long
-Public ìˆœì—°ë‚©1ì›(1) As Long, ìˆœì›”ë‚©1ì›(1) As Long, ì˜ì—…ì—°ë‚©1ì› As Long, ì˜ì—…ì›”ë‚©1ì› As Long, ìˆœì—°ë‚©1ì›_í‘œì¤€(1) As Long, ìˆœì›”ë‚©1ì›_í‘œì¤€(1) As Long, ì˜ì—…ì—°ë‚©1ì›_í‘œì¤€ As Long, ì˜ì—…ì›”ë‚©1ì›_í‘œì¤€ As Long, ìˆœì—°ë‚©ë¬´ë°°ë‹¹1ì› As Long, ìˆœì›”ë‚©ë¬´ë°°ë‹¹1ì› As Long, ìƒí’ˆp As Long, ìƒí’ˆnp As Long, Sum_ìƒí’ˆV As Long, Sum_ê³„ì§€V As Long, ìƒí’ˆí•œë„ As Long, ìˆœp As Long
-Public ì¤€ë¹„ê¸ˆ(110, 1) As Double, ì¤€ë¹„ê¸ˆ_í‘œì¤€(110, 1) As Double, í™˜ê¸‰ê¸ˆ_í‘œì¤€(110, 1) As Double
-Public ì¤€ë¹„ê¸ˆ1ì›(110, 1) As Double, ì¤€ë¹„ê¸ˆ1ì›_í‘œì¤€(110, 1) As Double
+Public nx³³¸é(110) As Double, nx³³¸é_Ç¥ÁØ(110) As Double, nx(110) As Double, nx_Ç¥ÁØ(110) As Double, nxÇÑµµ(110) As Double, nx¿ù³³ As Double, nx¹«¹è´ç As Double, nx¿ù³³_Ç¥ÁØ As Double, nx¿ù³³¹«¹è´ç As Double, bunja_p As Double, mx(110) As Double, bunja_p_Ç¥ÁØ As Double, mx_Ç¥ÁØ(110) As Double, mx¹«¹è´ç As Double, mxsum As Double, nxsum As Double, nxsum_k As Double, mxsum_Ç¥ÁØ As Double, nxsum_Ç¥ÁØ As Double, nxsum_k_Ç¥ÁØ As Double
+Public ¼ø¿¬³³¹«¹è´ç As Double, ¼ø¿ù³³¹«¹è´ç As Double, ¼ø¿¬³³(1) As Double, ¼ø¿ù³³(1) As Double, ¿µ¾÷¿¬³³ As Double, ¿µ¾÷¿ù³³ As Double, ¼ø¿¬³³_Ç¥ÁØ(1) As Double, ¼ø¿ù³³_Ç¥ÁØ(1) As Double, ¿µ¾÷¿¬³³_Ç¥ÁØ As Double, ¿µ¾÷¿ù³³_Ç¥ÁØ As Double
+Public ¼øÇÑµµ(1) As Double, ¼øÇÑµµ_Ç¥ÁØ(1) As Double, ¼øÇÑµµ1¿ø(1) As Long, ¼øÇÑµµ1¿ø_Ç¥ÁØ(1) As Long, ÇØ¾à°øÁ¦°è¼ö As Long, ÇØÁö°øÁ¦±â°£ As Long
+Public ¼ø¿¬³³1¿ø(1) As Long, ¼ø¿ù³³1¿ø(1) As Long, ¿µ¾÷¿¬³³1¿ø As Long, ¿µ¾÷¿ù³³1¿ø As Long, ¼ø¿¬³³1¿ø_Ç¥ÁØ(1) As Long, ¼ø¿ù³³1¿ø_Ç¥ÁØ(1) As Long, ¿µ¾÷¿¬³³1¿ø_Ç¥ÁØ As Long, ¿µ¾÷¿ù³³1¿ø_Ç¥ÁØ As Long, ¼ø¿¬³³¹«¹è´ç1¿ø As Long, ¼ø¿ù³³¹«¹è´ç1¿ø As Long, »óÇ°p As Long, »óÇ°np As Long, Sum_»óÇ°V As Long, Sum_°èÁöV As Long, »óÇ°ÇÑµµ As Long, ¼øp As Long
+Public ÁØºñ±İ(110, 1) As Double, ÁØºñ±İ_Ç¥ÁØ(110, 1) As Double, È¯±Ş±İ_Ç¥ÁØ(110, 1) As Double
+Public ÁØºñ±İ1¿ø(110, 1) As Double, ÁØºñ±İ1¿ø_Ç¥ÁØ(110, 1) As Double
 Public plancode As String, covcode As String, zz As String
-Public ë‹´ë³´ëª… As String
+Public ´ãº¸¸í As String
 Public nn As Integer
 Public j1 As Integer, jj1 As Integer
 
-Public í•´ì§€ìœ¨(1, 4, 110) As Double, w_rate(1, 4, 110) As Double
-Public ìƒí’ˆV(110) As Long
+Public ÇØÁöÀ²(1, 4, 110) As Double, w_rate(1, 4, 110) As Double
+Public »óÇ°V(110) As Long
 Public txt(430) As String
 Public hh As Integer, hhh As Integer, scheck As Integer
-Public ì‹ ê³„ì•½ë¹„í•œë„ As Double, ì‚¬ìš©ì‹ ê³„ì•½ë¹„ As Double, ì‹ ê³„ì•½ë¹„í•œë„_í‘œì¤€ As Double, ì‚¬ìš©ì‹ ê³„ì•½ë¹„_í‘œì¤€ As Double, ì „ì²´ì‚¬ì—…ë¹„ìœ¨ As Double
+Public ½Å°è¾àºñÇÑµµ As Double, »ç¿ë½Å°è¾àºñ As Double, ½Å°è¾àºñÇÑµµ_Ç¥ÁØ As Double, »ç¿ë½Å°è¾àºñ_Ç¥ÁØ As Double, ÀüÃ¼»ç¾÷ºñÀ² As Double
 Public i2 As Integer, mm As Integer
-Public í•´ì§€í™˜ê¸‰ê¸ˆ(21) As Long, USUM As Long
-Public ìƒê°ê¸°ê°„ As Integer, ì‚°ì¶œì—¬ë¶€ As Integer
+Public ÇØÁöÈ¯±Ş±İ(21) As Long, USUM As Long
+Public »ó°¢±â°£ As Integer, »êÃâ¿©ºÎ As Integer
 Public gubun As String
-Public ê²½ë¡œëª… As String, íŒŒì¼ëª… As String
-Public ê³„ì§€ë¼ì¸ìˆ˜(1163) As Long, ìƒí’ˆë¼ì¸ìˆ˜(1163) As Long
-Public ìš”ìœ¨êµ¬ë¶„ As String
+Public °æ·Î¸í As String, ÆÄÀÏ¸í As String
+Public °èÁö¶óÀÎ¼ö(1163) As Long, »óÇ°¶óÀÎ¼ö(1163) As Long
+Public ¿äÀ²±¸ºĞ As String
 Public renewperiod() As Variant
 Public jong As Integer, jong_k As Integer, jong_s As Integer, jong_e As Integer, jong_ss As Integer, jong_ee As Integer, n_rate As Integer, n_rate_k As Integer, n_rate_r As Integer, n_rate_c(5) As Integer
 Public calc_type As Integer
 Public ws As Worksheet
 Public Rng1 As Range
-Sub ì‚°ì¶œ()
-    
+Sub »êÃâ()
+
 Application.StatusBar = False
 Application.ScreenUpdating = False
 Application.Calculation = xlCalculationManual
 
-Sheets("ì‚°ì¶œ").Range("J11") = Now 'ì‹œì‘ì‹œê°„
-renewperiod() = Array(0, 3, 10, 20) 'ê°±ì‹ í˜• ê°±ì‹ ì£¼ê¸°
-irate = 1 ' ì ìš©/í‘œì¤€V(í‘œì¤€i+ê°€ì‚°)/í•´ì§€V(í‘œì¤€i*125%)/í‘œì¤€í•´ì§€ê³µì œì•¡(í•œë„ì²´í¬ìš©,í‘œì¤€i) ''15.01ìˆ˜ì •
-rate(1) = Sheets("ì‚°ì¶œ").Range("J7") 'ì˜ˆì •ì´ìœ¨
+Sheets("»êÃâ").Range("J11") = Now '½ÃÀÛ½Ã°£
+renewperiod() = Array(0, 3, 10, 20) '°»½ÅÇü °»½ÅÁÖ±â
+irate = 1 ' Àû¿ë/Ç¥ÁØV(Ç¥ÁØi+°¡»ê)/ÇØÁöV(Ç¥ÁØi*125%)/Ç¥ÁØÇØÁö°øÁ¦¾×(ÇÑµµÃ¼Å©¿ë,Ç¥ÁØi) ''15.01¼öÁ¤
+rate(1) = Sheets("»êÃâ").Range("J7") '¿¹Á¤ÀÌÀ²
 v = 1 / (1 + rate(irate))
-k = 3 'ì¶œë ¥ìš©
-ì‚°ì¶œì¢…ë¥˜ = Sheets("ì‚°ì¶œ").Range("J9") '1: ê³„ì§€ê±´ìˆ˜ì²´í¬(ì „ì²´ì¢…) 2: sì‚°ì¶œ(ì „ì²´ì¢…) 3: pê²€ì¦ 4: vê²€ì¦
+k = 3 'Ãâ·Â¿ë
+»êÃâÁ¾·ù = Sheets("»êÃâ").Range("J9") '1: °èÁö°Ç¼öÃ¼Å©(ÀüÃ¼Á¾) 2: s»êÃâ(ÀüÃ¼Á¾) 3: p°ËÁõ 4: v°ËÁõ
 
-If ì‚°ì¶œì¢…ë¥˜ = 1 Then
-  For a = Sheets("ì‚°ì¶œ").Range("J4") To Sheets("ì‚°ì¶œ").Range("J5")
-    ê³„ì§€ë¼ì¸ìˆ˜(a) = 0
-  Next a
-ElseIf ì‚°ì¶œì¢…ë¥˜ = 3 Then
-  For a = Sheets("ì‚°ì¶œ").Range("J4") To Sheets("ì‚°ì¶œ").Range("J5")
-    ìƒí’ˆë¼ì¸ìˆ˜(a) = 0
-  Next a
+If »êÃâÁ¾·ù = 1 Then
+For a = Sheets("»êÃâ").Range("J4") To Sheets("»êÃâ").Range("J5")
+°èÁö¶óÀÎ¼ö(a) = 0
+Next a
+ElseIf »êÃâÁ¾·ù = 3 Then
+For a = Sheets("»êÃâ").Range("J4") To Sheets("»êÃâ").Range("J5")
+»óÇ°¶óÀÎ¼ö(a) = 0
+Next a
 End If
 
-jong = CInt(Sheets("ì‚°ì¶œ").Range("J20"))
+jong = CInt(Sheets("»êÃâ").Range("J20"))
 
-If ì‚°ì¶œì¢…ë¥˜ > 1 Then
-Call ì •ê¸°ì‚¬ë§ë¥ ì¸ì‹
-Call ë‚©ë©´ìœ„í—˜ë¥ ì¸ì‹
-Call í•´ì§€ìœ¨ì¸ì‹
+If »êÃâÁ¾·ù > 1 Then
+Call Á¤±â»ç¸Á·üÀÎ½Ä
+Call ³³¸éÀ§Çè·üÀÎ½Ä
+Call ÇØÁöÀ²ÀÎ½Ä
 End If
 
-For n = Sheets("ì‚°ì¶œ").Range("J4") To Sheets("ì‚°ì¶œ").Range("J5")  'í…Œì´ë¸”ì„¸íŒ…
+For n = Sheets("»êÃâ").Range("J4") To Sheets("»êÃâ").Range("J5")  'Å×ÀÌºí¼¼ÆÃ
 
-jong_s = CInt(Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 39))
-jong_e = CInt(Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 40))
+jong_s = CInt(Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 39))
+jong_e = CInt(Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 40))
 
-If (jong < jong_s Or jong > jong_e) Then GoTo ë‹¤ìŒn
+If (jong < jong_s Or jong > jong_e) Then GoTo ´ÙÀ½n
 
-If ì‚°ì¶œì¢…ë¥˜ = 2 Then
-  ì‚°ì¶œì—¬ë¶€ = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 42)
+If »êÃâÁ¾·ù = 2 Then
+»êÃâ¿©ºÎ = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 42)
 Else
-  ì‚°ì¶œì—¬ë¶€ = 1
+»êÃâ¿©ºÎ = 1
 End If
 
-If ì‚°ì¶œì—¬ë¶€ = 1 Then
+If »êÃâ¿©ºÎ = 1 Then
 
 
-ìš”ìœ¨êµ¬ë¶„ = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 20) '* êµ¬ë¶„ì—†ìŒ 0 í‘œì¤€ì²´ 1 í‘œì¤€í•˜ì²´ ê±´ê°•ë“±ê¸‰ê·¸ë£¹ì½”ë“œABCD
-covcode = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 6)
-nn = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 42 + jong) 'ì‚¬ì—…ë¹„ ìœ„ì¹˜
+¿äÀ²±¸ºĞ = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 20) '* ±¸ºĞ¾øÀ½ 0 Ç¥ÁØÃ¼ 1 Ç¥ÁØÇÏÃ¼ °Ç°­µî±Ş±×·ìÄÚµåABCD
+covcode = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 6)
+nn = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 42 + jong) '»ç¾÷ºñ À§Ä¡
 
-calc_type = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 60) 'ê³„ì‚°ê¸°ìˆ˜ìœ í˜•
-AA = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 61) 'ì´ˆë…„ë„ Cxì— ê³±í•  ë¹„ìœ¨(ê°ì•¡/ë©´ì±…)
+calc_type = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 60) '°è»ê±â¼öÀ¯Çü
+AA = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 61) 'ÃÊ³âµµ Cx¿¡ °öÇÒ ºñÀ²(°¨¾×/¸éÃ¥)
 
-gubun = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 18)    'ë§Œê¸°êµ¬ë¶„ì½”ë“œ(01:ì„¸ë§Œê¸°,02:ì—°ë§Œê¸°,*:íƒœì•„ ì›”)
+gubun = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 18)    '¸¸±â±¸ºĞÄÚµå(01:¼¼¸¸±â,02:¿¬¸¸±â,*:ÅÂ¾Æ ¿ù)
 
-sex_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 28)        '0 êµ¬ë¶„ì—†ìŒ 1 ë‚¨ì 2 ì—¬ì
-sex_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 29)       'ì„±ë³„
+sex_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 28)        '0 ±¸ºĞ¾øÀ½ 1 ³²ÀÚ 2 ¿©ÀÚ
+sex_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 29)       '¼ºº°
 
-drv_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 31)
-drv_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 32)
+drv_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 31)
+drv_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 32)
 
-renew_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 33)
-renew_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 34)
+renew_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 33)
+renew_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 34)
 
-renewperi_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 62)
-renewperi_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 63)
+renewperi_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 62)
+renewperi_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 63)
 
-mangi_k_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 65)
-mangi_k_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 66)
+mangi_k_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 65)
+mangi_k_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 66)
 
-n_rate = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 47)  'ìœ„í—˜ë¥ ìœ í˜•
-n_rate_k = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 48)  'ìœ„í—˜ë¥ ê°¯ìˆ˜
-n_rate_r = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 49)  'ìœ„í—˜ë¥ í–‰
-si = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 55)  'ì¡°ì •ê³„ìˆ˜
+n_rate = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 47)  'À§Çè·üÀ¯Çü
+n_rate_k = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 48)  'À§Çè·ü°¹¼ö
+n_rate_r = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 49)  'À§Çè·üÇà
+si = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 55)  'Á¶Á¤°è¼ö
 
-ipno_n_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 36)
-ipno_n_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 35)
+ipno_n_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 36)
+ipno_n_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 35)
 
-lev_e = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 38)
-    
+lev_e = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 38)
+
 For kk = 1 To n_rate_k
-  n_rate_c(kk) = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 49 + kk)
+n_rate_c(kk) = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 49 + kk)
 Next kk
 
-face = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 27) * 10000 'ê¸°ì¤€ê¸ˆì•¡
-If ìš”ìœ¨êµ¬ë¶„ = "0013" Then
-  youl_s = 1
-  youl_e = 1
+face = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 27) * 10000 '±âÁØ±İ¾×
+If ¿äÀ²±¸ºĞ = "0013" Then
+youl_s = 1
+youl_e = 1
 Else
-  youl_s = 0
-  youl_e = 0
+youl_s = 0
+youl_e = 0
 End If
-'-----------------------------------------------------------------------í…Œì´ë¸”í™” ì´ê²ƒê¹Œì§„ sì‚°ì¶œì´ë“  pì‚°ì¶œì´ë“  vì‚°ì¶œì´ë“  ë‹¤í•´ì•¼í•¨(ê±´ìˆ˜ì²´í¬ ì œì™¸)
-If ì‚°ì¶œì¢…ë¥˜ > 1 Then
-Call ì¡°ì •ê³„ìˆ˜ì¸ì‹
-Call ì‚¬ì—…ë¹„ìœ¨ì¸ì‹
-Call ìœ„í—˜ë¥ ì¸ì‹
+'-----------------------------------------------------------------------Å×ÀÌºíÈ­ ÀÌ°Í±îÁø s»êÃâÀÌµç p»êÃâÀÌµç v»êÃâÀÌµç ´ÙÇØ¾ßÇÔ(°Ç¼öÃ¼Å© Á¦¿Ü)
+If »êÃâÁ¾·ù > 1 Then
+Call Á¶Á¤°è¼öÀÎ½Ä
+Call »ç¾÷ºñÀ²ÀÎ½Ä
+Call À§Çè·üÀÎ½Ä
 End If
 
 '-------------------------------------------------------------------------
-If ì‚°ì¶œì¢…ë¥˜ < 3 Then
+If »êÃâÁ¾·ù < 3 Then
 '-------------------------------------------------------------------------
-For sex = sex_s To sex_e 'ì„±ë³„
-If ì‚°ì¶œì¢…ë¥˜ = 2 And (sex = 2 And sex_s <> 2) Then GoTo ë‹¤ìŒsex 'Sì‚°ì¶œ/ì—¬ì„±ë³´í—˜ê³ ë ¤: ê¸°ì¤€ì„ ì—¬ì„±ìœ¼ë¡œ ì¡ì•„ì•¼í•¨
+For sex = sex_s To sex_e '¼ºº°
+If »êÃâÁ¾·ù = 2 And (sex = 2 And sex_s <> 2) Then GoTo ´ÙÀ½sex 'S»êÃâ/¿©¼ºº¸Çè°í·Á: ±âÁØÀ» ¿©¼ºÀ¸·Î Àâ¾Æ¾ßÇÔ
 
-For drv = drv_s To drv_e                        'ìš´ì „í˜•íƒœ
-For youl = youl_s To youl_e 'ìš”ìœ¨êµ¬ë¶„
+For drv = drv_s To drv_e                        '¿îÀüÇüÅÂ
+For youl = youl_s To youl_e '¿äÀ²±¸ºĞ
 For renew = renew_s To renew_e
-If ì‚°ì¶œì¢…ë¥˜ = 2 And renew = 2 Then GoTo ë‹¤ìŒrenew
+If »êÃâÁ¾·ù = 2 And renew = 2 Then GoTo ´ÙÀ½renew
 
-  For renewperi = renewperi_s To renewperi_e
-    If renew = 0 Then
-      ê°±ì‹ ì£¼ê¸° = 0
-    Else
-      ê°±ì‹ ì£¼ê¸° = renewperiod(renewperi)
-    End If
-     mangi_type = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 64)
-    
-    'â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…ë³´ê¸°ì¢…ë¥˜
-    If Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) = 5 Then 'ì‹ ì•”ì¹˜ë£Œë¹„
-      ipno_p_s = 1
-      ipno_p_e = 1
-    ElseIf renew = 1 Then 'ê°±ì‹ í˜• ìµœì´ˆê³„ì•½
-      ipno_p_s = ê°±ì‹ ì£¼ê¸°
-      ipno_p_e = ê°±ì‹ ì£¼ê¸°
-    ElseIf renew = 2 And renewperi = renewperi_e Then 'ê°±ì‹ í˜• ê°±ì‹ ê³„ì•½
-      ipno_p_s = 1
-      ipno_p_e = ê°±ì‹ ì£¼ê¸°
-    ElseIf renew = 0 Then 'ì„¸ë§Œê¸°&ì—°ë§Œê¸°ë¹„ê°±ì‹ 
-      ipno_p_s = 1
-      ipno_p_e = 1
-    Else
-      ipno_p_s = ê°±ì‹ ì£¼ê¸°
-      ipno_p_e = ê°±ì‹ ì£¼ê¸°
-    End If
-    
-  For ipno_p = ipno_p_s To ipno_p_e 'â˜…â˜…â˜…ë³´í—˜ê¸°ê°„
-    If Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) = 5 Then
-      insperiod = 5
-    ElseIf renew <> 0 Then
-      insperiod = ipno_p
-    End If
-      
-    If mangi_type = 0 Then 'íƒœì•„ë³´ì¥ìš© ë³´ê¸°/ë‚©ê¸°=0, Pê°’ ì¶œë ¥ì€ ì›”ë‚©ì—
-        ipno_m_s = 1
-        ipno_m_e = 1
-    Else
-        If mangi_type = 1 Then ipno_m_e = 2
-        If mangi_type = 2 Then ipno_m_e = 1
-        If mangi_type = 3 Then ipno_m_e = 3
-        If gubun = "01" Then
-          ipno_m_s = 1
-        ElseIf insperiod = ê°±ì‹ ì£¼ê¸° Then
-          ipno_m_s = ipno_m_e
-        Else
-          ipno_m_s = 1
-        End If
-    End If
-  For ipno_m = ipno_m_s To ipno_m_e 'â˜…â˜…â˜…ë§Œê¸°
-    
-    If Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) = 5 Then
-      mangi = 5
-    ElseIf mangi_type = 0 Then
-      mangi = 0
-    ElseIf mangi_type = 1 Then
-      Select Case ipno_m
-        Case 1
-          mangi = 90
-        Case 2
-          mangi = 100
-      End Select
-    ElseIf mangi_type = 2 Then
-      Select Case ipno_m
-        Case 1
-          mangi = 80
-      End Select
-    ElseIf mangi_type = 3 Then
-      Select Case ipno_m
-        Case 1
-          mangi = 80
-        Case 2
-          mangi = 90
-        Case 3
-          mangi = 100
-      End Select
-    End If
-    
-  For ipno_n = ipno_n_s To ipno_n_e 'ë‚©ê¸°ì¢…ë¥˜
-  If ì‚°ì¶œì¢…ë¥˜ = 2 And gubun = "01" And ipno_n <> ipno_n_e Then GoTo ë‹¤ìŒë‚©ê¸°
-  If (jong = 1 Or jong = 3) And ipno_n = 1 Then GoTo ë‹¤ìŒë‚©ê¸°
-      If Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) = 5 Then 'ì‹ ì•”ì¹˜ë£Œë¹„
-        premperiod = 0
-      ElseIf renew <> 0 Then
-        premperiod = insperiod  'ë‚©ì…ê¸°ê°„=ë³´í—˜ê¸°ê°„
-      ElseIf renew = 0 Then
-        Select Case ipno_n
-          Case 1
-            premperiod = 10
-          Case 2
-            premperiod = 15
-          Case 3
-            premperiod = 20
-          Case 4
-            premperiod = 30
-        End Select
-      End If
-    'â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…ê°€ì…ì—°ë ¹ë²”ìœ„
-    
-    'ì—°ë§Œê¸°
-    If Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) = 5 Then 'ì‹ ì•”ì¹˜ë£Œë¹„
-      age_s = 15
-      age_e = 100
-            
-   'ê°±ì‹ í˜• ìµœì´ˆê³„ì•½
-    ElseIf renew = 1 Then
-      age_e = Sheets("ì—°ë ¹").Cells(3 + n, 7 + renewperi)
-      age_s = Sheets("ì—°ë ¹").Cells(3 + n, 3 + renewperi)
-      
-    'ê°±ì‹ í˜• ê°±ì‹ ê³„ì•½
-    ElseIf renew = 2 Then
-      age_e = mangi - insperiod
-      If insperiod = ê°±ì‹ ì£¼ê¸° Then
-        age_s = Sheets("ì—°ë ¹").Cells(3 + n, 3 + renewperi) + insperiod
-      Else
-        age_s = age_e
-      End If
-    ElseIf gubun = "02" Then
-      age_s = Sheets("ì—°ë ¹").Cells(3 + n, 3 + ipno_n + 24 * (1 - (jong Mod 2)))
-      age_e = Sheets("ì—°ë ¹").Cells(3 + n, 7 + ipno_n + 24 * (1 - (jong Mod 2)))
-    Else
-      age_s = Sheets("ì—°ë ¹").Cells(3 + n, 3 + ipno_n + 24 * (1 - (jong Mod 2)) + 8 * (10 - mangi / 10))
-      age_e = Sheets("ì—°ë ¹").Cells(3 + n, 7 + ipno_n + 24 * (1 - (jong Mod 2)) + 8 * (10 - mangi / 10))
-    End If
-    
-   'â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…â˜…ê¸°ì¤€ì—°ë ¹
-    If gubun = "02" And (age_s <= 40 And age_e >= 40) Then
-      age_s_check = 40
-    ElseIf (gubun = "02" And (age_s > 40 Or age_e < 40)) Or gubun = "01" Then 'ì—°ë§Œê¸°&40ì„¸ì´ˆê³¼ ì‚°ì¶œ, ì„¸ë§Œê¸°
-      'age_s_check = 40
-      age_s_check = Application.Round((age_s + age_e) / 2, 0)
-    End If
-    
-    If ì‚°ì¶œì¢…ë¥˜ = 2 Then
-      age_s = age_s_check
-      age_e = age_s
-    End If
-                       
-'â˜…â˜…â˜…â˜…â˜… ê°€ì…ì—°ë ¹
+For renewperi = renewperi_s To renewperi_e
+If renew = 0 Then
+°»½ÅÁÖ±â = 0
+Else
+°»½ÅÁÖ±â = renewperiod(renewperi)
+End If
+mangi_type = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 64)
 
-    For lev = 1 To lev_e 'ê¸‰ìˆ˜
-    If ì‚°ì¶œì¢…ë¥˜ = 2 And lev <> 1 Then GoTo ë‹¤ìŒlev
-    
-    For age = age_s To age_e
-    If renew = 2 And renewperi = renewperi_e And (insperiod = 3 Or insperiod = 10) And insperiod <> renewperiod(renewperi) Then GoTo ë‹¤ìŒage
-    '-----------------------------------------------------------------------------
-    If ì‚°ì¶œì¢…ë¥˜ = 1 Then
-      ê³„ì§€ë¼ì¸ìˆ˜(n) = ê³„ì§€ë¼ì¸ìˆ˜(n) + 1
-    ElseIf ì‚°ì¶œì¢…ë¥˜ = 2 Then
-      Sheets("ê¸°ì¤€ì—°ë ¹").Cells(3 + n, 3 + IIf(gubun = "01", (mangi / 10 - 7), IIf(renew = 0, ipno_n, renewperi))) = age
-      
-      If renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) <> 5 Then
-      ë‚©ì…ë©´ì œ = 1
-      Else
-      ë‚©ì…ë©´ì œ = 0
-      End If
-      If gubun = "02" And renew = 0 Then
-        insperiod = premperiod
-      ElseIf gubun = "01" Then
-        insperiod = mangi - age
-      End If
-    handoprem = Application.Min(20, insperiod)
-    ë¬´í•´ì§€ = 0
-    Call ê³„ì‚°ê¸°ìˆ˜
-    Call ê³„ì‚°ê¸°ìˆ˜í•©
-    Call ìˆœë³´í—˜ë£Œê³„ì‚°
+'¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Úº¸±âÁ¾·ù
+If Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) = 5 Then '½Å¾ÏÄ¡·áºñ
+ipno_p_s = 1
+ipno_p_e = 1
+ElseIf renew = 1 Then '°»½ÅÇü ÃÖÃÊ°è¾à
+ipno_p_s = °»½ÅÁÖ±â
+ipno_p_e = °»½ÅÁÖ±â
+ElseIf renew = 2 And renewperi = renewperi_e Then '°»½ÅÇü °»½Å°è¾à
+ipno_p_s = 1
+ipno_p_e = °»½ÅÁÖ±â
+ElseIf renew = 0 Then '¼¼¸¸±â&¿¬¸¸±âºñ°»½Å
+ipno_p_s = 1
+ipno_p_e = 1
+Else
+ipno_p_s = °»½ÅÁÖ±â
+ipno_p_e = °»½ÅÁÖ±â
+End If
 
-    dxë¬´ë°°ë‹¹(0) = 100000
-    For i = 0 To (insperiod - 1)
-      x = age + i
-      cxë¬´ë°°ë‹¹(i) = dxë¬´ë°°ë‹¹(i) * qxë¬´ë°°ë‹¹(sex, lev, x) * v ^ 0.5
-      dxë¬´ë°°ë‹¹(i + 1) = dxë¬´ë°°ë‹¹(i) * (1 - qxë¬´ë°°ë‹¹(sex, lev, x)) * v
-    Next i
-    mxë¬´ë°°ë‹¹ = 0
-    For j = 0 To (insperiod - 1)
-      mxë¬´ë°°ë‹¹ = mxë¬´ë°°ë‹¹ + cxë¬´ë°°ë‹¹(j)
-    Next j
-    nxë¬´ë°°ë‹¹ = 0
-    For j = 0 To (premperiod - 1)
-      nxë¬´ë°°ë‹¹ = nxë¬´ë°°ë‹¹ + dxë¬´ë°°ë‹¹(j)
-    Next j
-    nxì›”ë‚©ë¬´ë°°ë‹¹ = nxë¬´ë°°ë‹¹ - 11 / 24 * (dxë¬´ë°°ë‹¹(0) - dxë¬´ë°°ë‹¹(premperiod))
-    ìˆœì›”ë‚©ë¬´ë°°ë‹¹ = mxë¬´ë°°ë‹¹ / (nxì›”ë‚©ë¬´ë°°ë‹¹ * 12)
-    s = ìˆœì›”ë‚©(1) / ìˆœì›”ë‚©ë¬´ë°°ë‹¹
-    Call sì¶œë ¥
-    '---------------------------------------------------------------------------------
-    If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) <> 5 Then
-    Call ì˜ì—…ë³´í—˜ë£Œê³„ì‚°
-    Call í•œë„ì²´í¬ 'ë¬´/ì €í•´ì§€ sì‚°ì¶œìš©
-    Call ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€ sì‚°ì¶œìš©
-    Call í‘œì¤€ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€
-    ë¬´í•´ì§€ = 1
-    Call ê³„ì‚°ê¸°ìˆ˜
-    Call ê³„ì‚°ê¸°ìˆ˜í•©
-    Call ìˆœë³´í—˜ë£Œê³„ì‚°
-    s = ìˆœì›”ë‚©(1) / ìˆœì›”ë‚©ë¬´ë°°ë‹¹
-    Call sì¶œë ¥
-    End If
-    
-    End If
-    '---------------------------------------------------------------------------------
-ë‹¤ìŒage:
+For ipno_p = ipno_p_s To ipno_p_e '¡Ú¡Ú¡Úº¸Çè±â°£
+If Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) = 5 Then
+insperiod = 5
+ElseIf renew <> 0 Then
+insperiod = ipno_p
+End If
+
+If mangi_type = 0 Then 'ÅÂ¾Æº¸Àå¿ë º¸±â/³³±â=0, P°ª Ãâ·ÂÀº ¿ù³³¿¡
+ipno_m_s = 1
+ipno_m_e = 1
+Else
+If mangi_type = 1 Then ipno_m_e = 2
+If mangi_type = 2 Then ipno_m_e = 1
+If mangi_type = 3 Then ipno_m_e = 3
+If gubun = "01" Then
+ipno_m_s = 1
+ElseIf insperiod = °»½ÅÁÖ±â Then
+ipno_m_s = ipno_m_e
+Else
+ipno_m_s = 1
+End If
+End If
+For ipno_m = ipno_m_s To ipno_m_e '¡Ú¡Ú¡Ú¸¸±â
+
+If Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) = 5 Then
+mangi = 5
+ElseIf mangi_type = 0 Then
+mangi = 0
+ElseIf mangi_type = 1 Then
+Select Case ipno_m
+Case 1
+mangi = 90
+Case 2
+mangi = 100
+End Select
+ElseIf mangi_type = 2 Then
+Select Case ipno_m
+Case 1
+mangi = 80
+End Select
+ElseIf mangi_type = 3 Then
+Select Case ipno_m
+Case 1
+mangi = 80
+Case 2
+mangi = 90
+Case 3
+mangi = 100
+End Select
+End If
+
+For ipno_n = ipno_n_s To ipno_n_e '³³±âÁ¾·ù
+If »êÃâÁ¾·ù = 2 And gubun = "01" And ipno_n <> ipno_n_e Then GoTo ´ÙÀ½³³±â
+If (jong = 1 Or jong = 3) And ipno_n = 1 Then GoTo ´ÙÀ½³³±â
+If Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) = 5 Then '½Å¾ÏÄ¡·áºñ
+premperiod = 0
+ElseIf renew <> 0 Then
+premperiod = insperiod  '³³ÀÔ±â°£=º¸Çè±â°£
+ElseIf renew = 0 Then
+Select Case ipno_n
+Case 1
+premperiod = 10
+Case 2
+premperiod = 15
+Case 3
+premperiod = 20
+Case 4
+premperiod = 30
+End Select
+End If
+'¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú°¡ÀÔ¿¬·É¹üÀ§
+
+'¿¬¸¸±â
+If Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) = 5 Then '½Å¾ÏÄ¡·áºñ
+age_s = 15
+age_e = 100
+
+'°»½ÅÇü ÃÖÃÊ°è¾à
+ElseIf renew = 1 Then
+age_e = Sheets("¿¬·É").Cells(3 + n, 7 + renewperi)
+age_s = Sheets("¿¬·É").Cells(3 + n, 3 + renewperi)
+
+'°»½ÅÇü °»½Å°è¾à
+ElseIf renew = 2 Then
+age_e = mangi - insperiod
+If insperiod = °»½ÅÁÖ±â Then
+age_s = Sheets("¿¬·É").Cells(3 + n, 3 + renewperi) + insperiod
+Else
+age_s = age_e
+End If
+ElseIf gubun = "02" Then
+age_s = Sheets("¿¬·É").Cells(3 + n, 3 + ipno_n + 24 * (1 - (jong Mod 2)))
+age_e = Sheets("¿¬·É").Cells(3 + n, 7 + ipno_n + 24 * (1 - (jong Mod 2)))
+Else
+age_s = Sheets("¿¬·É").Cells(3 + n, 3 + ipno_n + 24 * (1 - (jong Mod 2)) + 8 * (10 - mangi / 10))
+age_e = Sheets("¿¬·É").Cells(3 + n, 7 + ipno_n + 24 * (1 - (jong Mod 2)) + 8 * (10 - mangi / 10))
+End If
+
+'¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú±âÁØ¿¬·É
+If gubun = "02" And (age_s <= 40 And age_e >= 40) Then
+age_s_check = 40
+ElseIf (gubun = "02" And (age_s > 40 Or age_e < 40)) Or gubun = "01" Then '¿¬¸¸±â&40¼¼ÃÊ°ú »êÃâ, ¼¼¸¸±â
+'age_s_check = 40
+age_s_check = Application.Round((age_s + age_e) / 2, 0)
+End If
+
+If »êÃâÁ¾·ù = 2 Then
+age_s = age_s_check
+age_e = age_s
+End If
+
+'¡Ú¡Ú¡Ú¡Ú¡Ú °¡ÀÔ¿¬·É
+
+For lev = 1 To lev_e '±Ş¼ö
+If »êÃâÁ¾·ù = 2 And lev <> 1 Then GoTo ´ÙÀ½lev
+
+For age = age_s To age_e
+If renew = 2 And renewperi = renewperi_e And (insperiod = 3 Or insperiod = 10) And insperiod <> renewperiod(renewperi) Then GoTo ´ÙÀ½age
+'-----------------------------------------------------------------------------
+If »êÃâÁ¾·ù = 1 Then
+°èÁö¶óÀÎ¼ö(n) = °èÁö¶óÀÎ¼ö(n) + 1
+ElseIf »êÃâÁ¾·ù = 2 Then
+Sheets("±âÁØ¿¬·É").Cells(3 + n, 3 + IIf(gubun = "01", (mangi / 10 - 7), IIf(renew = 0, ipno_n, renewperi))) = age
+
+If renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) <> 5 Then
+³³ÀÔ¸éÁ¦ = 1
+Else
+³³ÀÔ¸éÁ¦ = 0
+End If
+If gubun = "02" And renew = 0 Then
+insperiod = premperiod
+ElseIf gubun = "01" Then
+insperiod = mangi - age
+End If
+handoprem = Application.Min(20, insperiod)
+¹«ÇØÁö = 0
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
+
+dx¹«¹è´ç(0) = 100000
+For i = 0 To (insperiod - 1)
+x = age + i
+cx¹«¹è´ç(i) = dx¹«¹è´ç(i) * qx¹«¹è´ç(sex, lev, x) * v ^ 0.5
+dx¹«¹è´ç(i + 1) = dx¹«¹è´ç(i) * (1 - qx¹«¹è´ç(sex, lev, x)) * v
+Next i
+mx¹«¹è´ç = 0
+For j = 0 To (insperiod - 1)
+mx¹«¹è´ç = mx¹«¹è´ç + cx¹«¹è´ç(j)
+Next j
+nx¹«¹è´ç = 0
+For j = 0 To (premperiod - 1)
+nx¹«¹è´ç = nx¹«¹è´ç + dx¹«¹è´ç(j)
+Next j
+nx¿ù³³¹«¹è´ç = nx¹«¹è´ç - 11 / 24 * (dx¹«¹è´ç(0) - dx¹«¹è´ç(premperiod))
+¼ø¿ù³³¹«¹è´ç = mx¹«¹è´ç / (nx¿ù³³¹«¹è´ç * 12)
+s = ¼ø¿ù³³(1) / ¼ø¿ù³³¹«¹è´ç
+Call sÃâ·Â
+'---------------------------------------------------------------------------------
+If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) <> 5 Then
+Call ¿µ¾÷º¸Çè·á°è»ê
+Call ÇÑµµÃ¼Å© '¹«/ÀúÇØÁö s»êÃâ¿ë
+Call ÁØºñ±İ°è»ê '¹«/ÀúÇØÁö s»êÃâ¿ë
+Call Ç¥ÁØÁØºñ±İ°è»ê '¹«/ÀúÇØÁö
+¹«ÇØÁö = 1
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
+s = ¼ø¿ù³³(1) / ¼ø¿ù³³¹«¹è´ç
+Call sÃâ·Â
+End If
+
+End If
+'---------------------------------------------------------------------------------
+´ÙÀ½age:
 Next age
 
-ë‹¤ìŒlev:
+´ÙÀ½lev:
 Next lev
 
-ë‹¤ìŒë‚©ê¸°:
+´ÙÀ½³³±â:
 Next ipno_n
 
-ë‹¤ìŒë§Œê¸°:
-Next ipno_m 'ê°±ì‹ ì¢…ë£Œ
+´ÙÀ½¸¸±â:
+Next ipno_m '°»½ÅÁ¾·á
 
-ë‹¤ìŒë³´ê¸°:
-Next ipno_p  'ë³´ê¸°
-Next renewperi 'ê°±ì‹ ì£¼ê¸°
+´ÙÀ½º¸±â:
+Next ipno_p  'º¸±â
+Next renewperi '°»½ÅÁÖ±â
 
-ë‹¤ìŒrenew:
+´ÙÀ½renew:
 Next renew
-ë‹¤ìŒyoul:
+´ÙÀ½youl:
 Next youl
 Next drv
 
-ë‹¤ìŒsex:
+´ÙÀ½sex:
 Next sex
 
 End If
 End If
-ë‹¤ìŒn:
+´ÙÀ½n:
 Next n
 '------------------------------------------------------------------------------------------
-If ì‚°ì¶œì¢…ë¥˜ = 3 Then
+If »êÃâÁ¾·ù = 3 Then
 
-Sheets("ì‚°ì¶œ").Range("J12") = Now
+Sheets("»êÃâ").Range("J12") = Now
 
-'í…ìŠ¤íŠ¸ ë¹„êµ ì‹œì‘
+'ÅØ½ºÆ® ºñ±³ ½ÃÀÛ
 Dim DSN As String
 Dim DATA_FIELD As String
-Open ThisWorkbook.Path & "\ê²€ì¦ ë³´í—˜ë£Œ.txt" For Output As #1 'ì˜ì—…pì²´í¬
-MsgBox ("Pí…Œì´ë¸”input")
-DSN = Application.GetOpenFilename("TEXT files(*.TXT),(*TXT)", , "íƒ­ìœ¼ë¡œ êµ¬ë¶„ëœ í…ìŠ¤íŠ¸ íŒŒì¼")
+Open ThisWorkbook.Path & "\°ËÁõ º¸Çè·á.txt" For Output As #1 '¿µ¾÷pÃ¼Å©
+MsgBox ("PÅ×ÀÌºíinput")
+DSN = Application.GetOpenFilename("TEXT files(*.TXT),(*TXT)", , "ÅÇÀ¸·Î ±¸ºĞµÈ ÅØ½ºÆ® ÆÄÀÏ")
 If DSN = "FALSE" Then Exit Sub
-Sheets("ì‚°ì¶œ").Range("J13") = Now
+Sheets("»êÃâ").Range("J13") = Now
 Open DSN For Input As #11
 Do Until EOF(11)
 Line Input #11, DATA_FIELD
@@ -407,115 +407,115 @@ drv = Application.IfError(Val(Mid(DATA_FIELD, 65, 2)), 0)
 renew = Application.IfError(Val(Mid(DATA_FIELD, 75, 2)), 0)
 zz = Mid(DATA_FIELD, 105, 1)
 If zz = "*" Then
-  lev = 1
+lev = 1
 Else
-  lev = Application.IfError(Val(Mid(DATA_FIELD, 105, 1)), 0)
+lev = Application.IfError(Val(Mid(DATA_FIELD, 105, 1)), 0)
 End If
 gubun = Mid(DATA_FIELD, 115, 2)
 mangi = Mid(DATA_FIELD, 125, 3)
 c = Application.IfError(Val(Mid(DATA_FIELD, 128, 4)), 0)
-ìƒí’ˆp = Val(Mid(DATA_FIELD, 197, 10))
+»óÇ°p = Val(Mid(DATA_FIELD, 197, 10))
 Select Case c
-    Case 0
-        youl = 0
-    Case 101
-        youl = 1
-    Case 102
-        youl = 2
-    Case 103
-        youl = 3
-    Case 104
-        youl = 4
-    Case 105
-        youl = 5
-    Case 106
-        youl = 6
-    Case 13
-        youl = 1
+Case 0
+youl = 0
+Case 101
+youl = 1
+Case 102
+youl = 2
+Case 103
+youl = 3
+Case 104
+youl = 4
+Case 105
+youl = 5
+Case 106
+youl = 6
+Case 13
+youl = 1
 End Select
 age = Application.IfError(Val(Mid(DATA_FIELD, 148, 3)), 0)
 
-Set ws = Worksheets("NSPë ˆì´ì•„ì›ƒ")
+Set ws = Worksheets("NSP·¹ÀÌ¾Æ¿ô")
 
 n = Application.WorksheetFunction.VLookup(covcode, ws.Range("A4:B1166"), 2, False)
-ë‹´ë³´ëª… = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 4)
-calc_type = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 60) 'ê³„ì‚°ê¸°ìˆ˜ìœ í˜•
-AA = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 61) 'ì´ˆë…„ë„ Cxì— ê³±í•  ë¹„ìœ¨(ê°ì•¡/ë©´ì±…)
-face = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 27) * 10000 'ê¸°ì¤€ê¸ˆì•¡
-sex_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 28) 'í•œë„ì²´í¬ ê¸°ì¤€ ì„±ë³„
-si = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 55)
-nn = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 42 + jong)
-If renew = 1 Then    'ê°±ì‹ ë‹´ë³´ ìµœì´ˆê³„ì•½
-  ipno_n = 0
-  Select Case insperiod
-    Case 3
-      renewperi = 1
-    Case 10
-      renewperi = 2
-    Case 20
-      renewperi = 3
-  End Select
-ElseIf renew = 2 Then  'ê°±ì‹ ë‹´ë³´ ê°±ì‹ ê³„ì•½, renewperië¥¼ 0ìœ¼ë¡œ ì¡ì•„ë„ ë¬¸ì œ ì—†ëŠ”ì§€ í•œë²ˆ í™•ì¸í•´ë³´ê¸°(ì›ë˜ëŠ” ì¹¼ëŸ¼ê°’ì— ë“¤ì–´ê°€ê¸´ í•œë‹¤..)
-  renewperi = 0
-  ipno_n = 0
-ElseIf renew = 0 Then  'ê°±ì‹ ë¹„ê°±ì‹  ë¬´ê´€í•œ ì‹ ì•”ì¹˜ë£Œë¹„, ì—°ë§Œê¸°ë¹„ê°±ì‹ (ë‚©ì…ì§€ì›), ì„¸ë§Œê¸°
-  renewperi = 0
-  Select Case premperiod
-  Case 0
-    ipno_n = 0
-  Case 10
-    ipno_n = 1
-  Case 15
-    ipno_n = 2
-  Case 20
-    ipno_n = 3
-  Case 30
-    ipno_n = 4
-  End Select
+´ãº¸¸í = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 4)
+calc_type = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 60) '°è»ê±â¼öÀ¯Çü
+AA = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 61) 'ÃÊ³âµµ Cx¿¡ °öÇÒ ºñÀ²(°¨¾×/¸éÃ¥)
+face = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 27) * 10000 '±âÁØ±İ¾×
+sex_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 28) 'ÇÑµµÃ¼Å© ±âÁØ ¼ºº°
+si = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 55)
+nn = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 42 + jong)
+If renew = 1 Then    '°»½Å´ãº¸ ÃÖÃÊ°è¾à
+ipno_n = 0
+Select Case insperiod
+Case 3
+renewperi = 1
+Case 10
+renewperi = 2
+Case 20
+renewperi = 3
+End Select
+ElseIf renew = 2 Then  '°»½Å´ãº¸ °»½Å°è¾à, renewperi¸¦ 0À¸·Î Àâ¾Æµµ ¹®Á¦ ¾ø´ÂÁö ÇÑ¹ø È®ÀÎÇØº¸±â(¿ø·¡´Â Ä®·³°ª¿¡ µé¾î°¡±ä ÇÑ´Ù..)
+renewperi = 0
+ipno_n = 0
+ElseIf renew = 0 Then  '°»½Åºñ°»½Å ¹«°üÇÑ ½Å¾ÏÄ¡·áºñ, ¿¬¸¸±âºñ°»½Å(³³ÀÔÁö¿ø), ¼¼¸¸±â
+renewperi = 0
+Select Case premperiod
+Case 0
+ipno_n = 0
+Case 10
+ipno_n = 1
+Case 15
+ipno_n = 2
+Case 20
+ipno_n = 3
+Case 30
+ipno_n = 4
+End Select
 End If
-If renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 15) <> 5 Then
-      ë‚©ì…ë©´ì œ = 1
-      Else
-      ë‚©ì…ë©´ì œ = 0
-      End If
-ë¬´í•´ì§€ = 0
-Call ê³„ì‚°ê¸°ìˆ˜
-Call ê³„ì‚°ê¸°ìˆ˜í•©
-Call ìˆœë³´í—˜ë£Œê³„ì‚°
+If renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 15) <> 5 Then
+³³ÀÔ¸éÁ¦ = 1
+Else
+³³ÀÔ¸éÁ¦ = 0
+End If
+¹«ÇØÁö = 0
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
 
-If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) <> 5 Then
-Call ì˜ì—…ë³´í—˜ë£Œê³„ì‚°
-Call í•œë„ì²´í¬ 'ë¬´/ì €í•´ì§€
-Call ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€
-Call í‘œì¤€ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€
-ë¬´í•´ì§€ = 1
-Call ê³„ì‚°ê¸°ìˆ˜
-Call ê³„ì‚°ê¸°ìˆ˜í•©
-Call ìˆœë³´í—˜ë£Œê³„ì‚°
+If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) <> 5 Then
+Call ¿µ¾÷º¸Çè·á°è»ê
+Call ÇÑµµÃ¼Å© '¹«/ÀúÇØÁö
+Call ÁØºñ±İ°è»ê '¹«/ÀúÇØÁö
+Call Ç¥ÁØÁØºñ±İ°è»ê '¹«/ÀúÇØÁö
+¹«ÇØÁö = 1
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
 End If
 
-Call ì˜ì—…ë³´í—˜ë£Œê³„ì‚°
-'Call ì¶œë ¥
+Call ¿µ¾÷º¸Çè·á°è»ê
+'Call Ãâ·Â
 
-If ì˜ì—…ì›”ë‚©1ì› <> ìƒí’ˆp Then Call Pì¶œë ¥
-  ìƒí’ˆë¼ì¸ìˆ˜(n) = ìƒí’ˆë¼ì¸ìˆ˜(n) + 1
-  
+If ¿µ¾÷¿ù³³1¿ø <> »óÇ°p Then Call PÃâ·Â
+»óÇ°¶óÀÎ¼ö(n) = »óÇ°¶óÀÎ¼ö(n) + 1
+
 Loop
-  Close #1
-  Close #11
+Close #1
+Close #11
 '-----------------------------------------------------------------------------------------------------
-ElseIf ì‚°ì¶œì¢…ë¥˜ = 4 Then
+ElseIf »êÃâÁ¾·ù = 4 Then
 
-Sheets("ì‚°ì¶œ").Range("J12") = Now
+Sheets("»êÃâ").Range("J12") = Now
 
 Dim DSNV As String
 Dim DATA_FIELD_V As String
-Open ThisWorkbook.Path & "\ê²€ì¦ ì¤€ë¹„ê¸ˆ.txt" For Output As #2  'ì¤€ë¹„ê¸ˆì²´í¬. ìˆœpì²´í¬, í•œë„ì¼ì¹˜ ì²´í¬
-Open ThisWorkbook.Path & "\í•œë„ì²´í¬.txt" For Output As #3  'ì‹ ê³„ì•½ë¹„í•œë„ì´ˆê³¼ ì²´í¬
-MsgBox ("Ví…Œì´ë¸”input")
-DSNV = Application.GetOpenFilename("TEXT files(*.TXT),(*TXT)", , "íƒ­ìœ¼ë¡œ êµ¬ë¶„ëœ í…ìŠ¤íŠ¸ íŒŒì¼")
+Open ThisWorkbook.Path & "\°ËÁõ ÁØºñ±İ.txt" For Output As #2  'ÁØºñ±İÃ¼Å©. ¼øpÃ¼Å©, ÇÑµµÀÏÄ¡ Ã¼Å©
+Open ThisWorkbook.Path & "\ÇÑµµÃ¼Å©.txt" For Output As #3  '½Å°è¾àºñÇÑµµÃÊ°ú Ã¼Å©
+MsgBox ("VÅ×ÀÌºíinput")
+DSNV = Application.GetOpenFilename("TEXT files(*.TXT),(*TXT)", , "ÅÇÀ¸·Î ±¸ºĞµÈ ÅØ½ºÆ® ÆÄÀÏ")
 If DSNV = "FALSE" Then Exit Sub
-Sheets("ì‚°ì¶œ").Range("J13") = Now
+Sheets("»êÃâ").Range("J13") = Now
 Open DSNV For Input As #11
 Do Until EOF(11)
 Line Input #11, DATA_FIELD_V
@@ -530,135 +530,135 @@ drv = Application.IfError(Val(Mid(DATA_FIELD_V, 65, 2)), 0)
 renew = Application.IfError(Val(Mid(DATA_FIELD_V, 75, 2)), 0)
 zz = Mid(DATA_FIELD_V, 105, 1)
 If zz = "*" Then
-  lev = 1
+lev = 1
 Else
-  lev = Application.IfError(Val(Mid(DATA_FIELD_V, 105, 1)), 0)
+lev = Application.IfError(Val(Mid(DATA_FIELD_V, 105, 1)), 0)
 End If
 gubun = Mid(DATA_FIELD_V, 115, 2)
 mangi = Mid(DATA_FIELD_V, 125, 3)
 c = Application.IfError(Val(Mid(DATA_FIELD_V, 128, 4)), 0)
 If mangi = 5 Then
-ìƒí’ˆnp = Val(Mid(DATA_FIELD_V, 1847, 10)) ''' ì›”ë‚© ìˆœë³´
+»óÇ°np = Val(Mid(DATA_FIELD_V, 1847, 10)) ''' ¿ù³³ ¼øº¸
 Else
-ìƒí’ˆnp = Val(Mid(DATA_FIELD_V, 1862, 10)) ''' ì›”ë‚© ìˆœë³´
+»óÇ°np = Val(Mid(DATA_FIELD_V, 1862, 10)) ''' ¿ù³³ ¼øº¸
 End If
-ìƒí’ˆí•œë„ = Val(Mid(DATA_FIELD_V, 3692, 10)) ''' í•œë„ ê°’
-Sum_ìƒí’ˆV = 0
-  For t = 0 To insperiod
-    ìƒí’ˆV(t) = Mid(DATA_FIELD_V, 182 + t * 15, 15)
-    Sum_ìƒí’ˆV = Sum_ìƒí’ˆV + ìƒí’ˆV(t)
-  Next t
+»óÇ°ÇÑµµ = Val(Mid(DATA_FIELD_V, 3692, 10)) ''' ÇÑµµ °ª
+Sum_»óÇ°V = 0
+For t = 0 To insperiod
+»óÇ°V(t) = Mid(DATA_FIELD_V, 182 + t * 15, 15)
+Sum_»óÇ°V = Sum_»óÇ°V + »óÇ°V(t)
+Next t
 Select Case c
-    Case 0
-        youl = 0
-    Case 101
-        youl = 1
-    Case 102
-        youl = 2
-    Case 103
-        youl = 3
-    Case 104
-        youl = 4
-    Case 105
-        youl = 5
-    Case 106
-        youl = 6
-    Case 13
-        youl = 1
+Case 0
+youl = 0
+Case 101
+youl = 1
+Case 102
+youl = 2
+Case 103
+youl = 3
+Case 104
+youl = 4
+Case 105
+youl = 5
+Case 106
+youl = 6
+Case 13
+youl = 1
 End Select
 age = Application.IfError(Val(Mid(DATA_FIELD_V, 148, 3)), 0)
 
-Set ws = Worksheets("NSPë ˆì´ì•„ì›ƒ")
+Set ws = Worksheets("NSP·¹ÀÌ¾Æ¿ô")
 
 n = Application.WorksheetFunction.VLookup(covcode, ws.Range("A4:B1166"), 2, False)
-ë‹´ë³´ëª… = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 4)
-calc_type = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 60) 'ê³„ì‚°ê¸°ìˆ˜ìœ í˜•
-AA = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 61) 'ì´ˆë…„ë„ Cxì— ê³±í•  ë¹„ìœ¨(ê°ì•¡/ë©´ì±…)
-face = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 27) * 10000 'ê¸°ì¤€ê¸ˆì•¡
-sex_s = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 28) 'í•œë„ì²´í¬ ê¸°ì¤€ ì„±ë³„
-si = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 55)
-nn = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 42 + jong)
-If renew = 1 Then    'ê°±ì‹ ë‹´ë³´ ìµœì´ˆê³„ì•½
-  ipno_n = 0
-  Select Case insperiod
-    Case 3
-      renewperi = 1
-    Case 10
-      renewperi = 2
-    Case 20
-      renewperi = 3
-  End Select
-ElseIf renew = 2 Then  'ê°±ì‹ ë‹´ë³´ ê°±ì‹ ê³„ì•½, renewperië¥¼ 0ìœ¼ë¡œ ì¡ì•„ë„ ë¬¸ì œ ì—†ëŠ”ì§€ í•œë²ˆ í™•ì¸í•´ë³´ê¸°(ì›ë˜ëŠ” ì¹¼ëŸ¼ê°’ì— ë“¤ì–´ê°€ê¸´ í•œë‹¤..)
-  renewperi = 0
-  ipno_n = 0
-ElseIf renew = 0 Then  'ê°±ì‹ ë¹„ê°±ì‹  ë¬´ê´€í•œ ì‹ ì•”ì¹˜ë£Œë¹„, ì—°ë§Œê¸°ë¹„ê°±ì‹ (ë‚©ì…ì§€ì›), ì„¸ë§Œê¸°
-  renewperi = 0
-  Select Case premperiod
-  Case 0
-    ipno_n = 0
-  Case 10
-    ipno_n = 1
-  Case 15
-    ipno_n = 2
-  Case 20
-    ipno_n = 3
-  Case 30
-    ipno_n = 4
-  End Select
+´ãº¸¸í = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 4)
+calc_type = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 60) '°è»ê±â¼öÀ¯Çü
+AA = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 61) 'ÃÊ³âµµ Cx¿¡ °öÇÒ ºñÀ²(°¨¾×/¸éÃ¥)
+face = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 27) * 10000 '±âÁØ±İ¾×
+sex_s = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 28) 'ÇÑµµÃ¼Å© ±âÁØ ¼ºº°
+si = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 55)
+nn = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 42 + jong)
+If renew = 1 Then    '°»½Å´ãº¸ ÃÖÃÊ°è¾à
+ipno_n = 0
+Select Case insperiod
+Case 3
+renewperi = 1
+Case 10
+renewperi = 2
+Case 20
+renewperi = 3
+End Select
+ElseIf renew = 2 Then  '°»½Å´ãº¸ °»½Å°è¾à, renewperi¸¦ 0À¸·Î Àâ¾Æµµ ¹®Á¦ ¾ø´ÂÁö ÇÑ¹ø È®ÀÎÇØº¸±â(¿ø·¡´Â Ä®·³°ª¿¡ µé¾î°¡±ä ÇÑ´Ù..)
+renewperi = 0
+ipno_n = 0
+ElseIf renew = 0 Then  '°»½Åºñ°»½Å ¹«°üÇÑ ½Å¾ÏÄ¡·áºñ, ¿¬¸¸±âºñ°»½Å(³³ÀÔÁö¿ø), ¼¼¸¸±â
+renewperi = 0
+Select Case premperiod
+Case 0
+ipno_n = 0
+Case 10
+ipno_n = 1
+Case 15
+ipno_n = 2
+Case 20
+ipno_n = 3
+Case 30
+ipno_n = 4
+End Select
 End If
 
-If renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) <> 5 Then
-      ë‚©ì…ë©´ì œ = 1
-      Else
-      ë‚©ì…ë©´ì œ = 0
-      End If
-ë¬´í•´ì§€ = 0
-Call ê³„ì‚°ê¸°ìˆ˜
-Call ê³„ì‚°ê¸°ìˆ˜í•©
-Call ìˆœë³´í—˜ë£Œê³„ì‚°
+If renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) <> 5 Then
+³³ÀÔ¸éÁ¦ = 1
+Else
+³³ÀÔ¸éÁ¦ = 0
+End If
+¹«ÇØÁö = 0
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
 
-If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 19) <> 5 Then
-Call ì˜ì—…ë³´í—˜ë£Œê³„ì‚°
-Call í•œë„ì²´í¬ 'ë¬´/ì €í•´ì§€
-Call ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€
-Call í‘œì¤€ì¤€ë¹„ê¸ˆê³„ì‚° 'ë¬´/ì €í•´ì§€
-ë¬´í•´ì§€ = 1
-Call ê³„ì‚°ê¸°ìˆ˜
-Call ê³„ì‚°ê¸°ìˆ˜í•©
-Call ìˆœë³´í—˜ë£Œê³„ì‚°
+If (jong = 1 Or jong = 3) And renew = 0 And Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 19) <> 5 Then
+Call ¿µ¾÷º¸Çè·á°è»ê
+Call ÇÑµµÃ¼Å© '¹«/ÀúÇØÁö
+Call ÁØºñ±İ°è»ê '¹«/ÀúÇØÁö
+Call Ç¥ÁØÁØºñ±İ°è»ê '¹«/ÀúÇØÁö
+¹«ÇØÁö = 1
+Call °è»ê±â¼ö
+Call °è»ê±â¼öÇÕ
+Call ¼øº¸Çè·á°è»ê
 End If
 
-Call ì˜ì—…ë³´í—˜ë£Œê³„ì‚°
-Call í•œë„ì²´í¬
-Call ì¤€ë¹„ê¸ˆê³„ì‚°
+Call ¿µ¾÷º¸Çè·á°è»ê
+Call ÇÑµµÃ¼Å©
+Call ÁØºñ±İ°è»ê
 
-  Sum_ê³„ì§€V = 0
-  For t = 0 To insperiod
-    Sum_ê³„ì§€V = Sum_ê³„ì§€V + ì¤€ë¹„ê¸ˆ1ì›(t, 1)
-  Next t
-  If Sum_ê³„ì§€V <> Sum_ìƒí’ˆV Or Int(ì‹ ê³„ì•½ë¹„í•œë„) <> ìƒí’ˆí•œë„ Or ìˆœp <> ìƒí’ˆnp Or ìƒí’ˆnp = 0 Then Call Vì¶œë ¥
-  
-  If Int(ì‹ ê³„ì•½ë¹„í•œë„) < ì‚¬ìš©ì‹ ê³„ì•½ë¹„ And sex = sex_s And lev = 1 And (renew = 1 Or (renew = 0 And gubun = "02") Or (renew = 0 And gubun = "01" And ipno_n = 4)) Then
-    If Sheets("ê¸°ì¤€ì—°ë ¹").Cells(3 + n, 3 + IIf(gubun = "01", (mangi / 10 - 7), IIf(renew = 0, ipno_n, renewperi))) = age Then Call í•œë„ì¶œë ¥
-  End If
-'Call ì¶œë ¥
+Sum_°èÁöV = 0
+For t = 0 To insperiod
+Sum_°èÁöV = Sum_°èÁöV + ÁØºñ±İ1¿ø(t, 1)
+Next t
+If Sum_°èÁöV <> Sum_»óÇ°V Or Int(½Å°è¾àºñÇÑµµ) <> »óÇ°ÇÑµµ Or ¼øp <> »óÇ°np Or »óÇ°np = 0 Then Call VÃâ·Â
+
+If Int(½Å°è¾àºñÇÑµµ) < »ç¿ë½Å°è¾àºñ And sex = sex_s And lev = 1 And (renew = 1 Or (renew = 0 And gubun = "02") Or (renew = 0 And gubun = "01" And ipno_n = 4)) Then
+If Sheets("±âÁØ¿¬·É").Cells(3 + n, 3 + IIf(gubun = "01", (mangi / 10 - 7), IIf(renew = 0, ipno_n, renewperi))) = age Then Call ÇÑµµÃâ·Â
+End If
+'Call Ãâ·Â
 Loop
 
-  Close #2
-  Close #3
-  Close #11
+Close #2
+Close #3
+Close #11
 
 End If
 
-If ì‚°ì¶œì¢…ë¥˜ = 1 Then
+If »êÃâÁ¾·ù = 1 Then
 
-For i = Sheets("ì‚°ì¶œ").Range("J4") To Sheets("ì‚°ì¶œ").Range("J5")
-Sheets("ì‚°ì¶œ").Cells(5 + i, 7) = ê³„ì§€ë¼ì¸ìˆ˜(i)
+For i = Sheets("»êÃâ").Range("J4") To Sheets("»êÃâ").Range("J5")
+Sheets("»êÃâ").Cells(5 + i, 7) = °èÁö¶óÀÎ¼ö(i)
 Next i
 
-ElseIf ì‚°ì¶œì¢…ë¥˜ = 3 Then
-For i = Sheets("ì‚°ì¶œ").Range("J4") To Sheets("ì‚°ì¶œ").Range("J5")
-Sheets("ì‚°ì¶œ").Cells(5 + i, 6) = ìƒí’ˆë¼ì¸ìˆ˜(i)
+ElseIf »êÃâÁ¾·ù = 3 Then
+For i = Sheets("»êÃâ").Range("J4") To Sheets("»êÃâ").Range("J5")
+Sheets("»êÃâ").Cells(5 + i, 6) = »óÇ°¶óÀÎ¼ö(i)
 Next i
 
 End If
@@ -667,8 +667,8 @@ Application.StatusBar = False
 Application.ScreenUpdating = True
 Application.Calculation = xlCalculationAutomatic
 
-Sheets("ì‚°ì¶œ").Range("J14") = Now 'ì¢…ë£Œ
+Sheets("»êÃâ").Range("J14") = Now 'Á¾·á
 
 
-MsgBox "ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤"
+MsgBox "¿Ï·áµÇ¾ú½À´Ï´Ù"
 End Sub

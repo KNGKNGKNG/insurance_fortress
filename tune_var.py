@@ -47,59 +47,52 @@ def get_vba_code(file_path, module_type="StandardModule"):
     except Exception as e:
         print(f"오류 발생: {e}")
     
-## 단일 변수 선언으로 전환하는 메소드 (250123)##
-# def tune_vba_code(vba_code):
-    # pattern = r"Public\s+(.*)\s+As\s+(Integer|Double|Long|String|Variant|Worksheet|Range)"
-
-    # tuned_code = []
-
-    # for line in vba_code.splitlines():
-        # match = re.match(pattern, line.strip())
-        # if match:
-            # variables = match.group(1).split(",")
-            # data_type = match.group(2)
-
-            # tuned_variables = []
-            # for var in variables:
-                # var = var.strip()
-                # if "(" in var and ")" in var:
-                    # tuned_variables.append(f"{var} As {data_type}")
-                # else:
-                    # tuned_variables.append(f"{var} As {data_type}")
-
-            # tuned_line = "Public " + ", ".join(tuned_variables)
-            # tuned_code.append(tuned_line)
-        # else:
-            # tuned_code.append(line)
-
-    # return "\n".join(tuned_code)
-
-def tune_vba_code(vba_code):
-    pattern = r"Public\s+(.*)\s+As\s+(Integer|Double|Long|String|Variant|Worksheet|Range)"
-
+## 단일 변수 선언으로 전환하는 메소드 (250207)##
+def tune_var(vba_code):
     tuned_code = []
-
+    
     for line in vba_code.splitlines():
-        match = re.match(pattern, line.strip())
-        if match:
-            variables = match.group(1)
-            data_type = match.group(2)
-
-            # 배열 - 괄호 안의 쉼표를 임시로 보호
-            protected_variables = re.sub(r"\([^)]*\)", lambda x: x.group(0).replace(",", "|"), variables)
-
-            # 코드를 쉼표로 나누고, 다시 괄호 안 쉼표를 복원 후 데이터 타입 추가
-            split_variables = protected_variables.split(",")
-            tuned_variables = [
-                f"{var.strip().replace('|', ',')} As {data_type}" for var in split_variables
-            ]
-
-            tuned_line = "Public " + ", ".join(tuned_variables)
-            tuned_code.append(tuned_line)
-        else:
-            # 매칭되지 않은 줄은 그대로 추가
+        line = line.strip()
+        if not line.startswith("Public"):
             tuned_code.append(line)
+            continue
 
+        # VBA 주석 제거
+        line = re.split(r"'", line)[0].strip()
+
+        # "Public" 제거 후 전체 문자열 처리
+        line_content = line.replace("Public ", "", 1)
+        
+        # "As 데이터타입"을 기준으로 분리
+        parts = re.split(r"\s+As\s+", line_content)
+        
+        # 데이터타입이 지정되지 않은 변수 선언은 그대로 유지
+        if len(parts) < 2:
+            tuned_code.append(line)
+            continue
+
+        parsed_variables = []
+        
+        for i in range(len(parts) - 1):
+            var_segment = parts[i].strip()
+            dtype = parts[i + 1].split(",")[0].strip()
+            
+            # 쉼표를 기준으로 개별 변수 추출 (배열 보호 처리)
+            protected_vars = re.sub(r"\([^)]*\)", lambda x: x.group(0).replace(",", "|"), var_segment)
+            variable_list = [v.strip().replace("|", ",") for v in protected_vars.split(",")]
+            
+            # 데이터 타입 문자열이 아닌 경우만 추가
+            if dtype not in ["Integer", "Double", "Long", "String", "Variant", "Worksheet", "Range"]:
+                continue
+            
+            # 각 변수에 해당하는 데이터 타입 매칭하여 저장
+            for var in variable_list:
+                if var and var not in ["Integer", "Double", "Long", "String", "Variant", "Worksheet", "Range"]:
+                    parsed_variables.append(f"{var} As {dtype}")
+        
+        # 변환된 줄을 추가
+        tuned_code.append("Public " + ", ".join(parsed_variables))
+    
     return "\n".join(tuned_code)
 
 
@@ -111,17 +104,17 @@ def result_print_out(file_path, output_dir):
 
     for module_name, code in vba_code_dict.items():
         print(f"모듈 '{module_name}' 튜닝 중...")
-        tuned_code = tune_vba_code(code)
+        tuned_code = tune_var(code)
 
         output_file = f"{output_dir}/{module_name}_tuned_for_eb7.bas"
 
-        with open(output_file, 'w', encoding='utf-8') as file:
+        with open(output_file, 'w', encoding='mbcs') as file:
             file.write(tuned_code)
         print(f"모듈 '{module_name}'의 튜닝된 코드가 저장되었습니다: {output_file}")
 
 
 
-file_path = r"C:\Users\user\Desktop\project\vba_tuner_to_eb7\1_3.10.5세만기_PV산출_최종_송부.xlsm"
-output_dir = r"C:\Users\user\Desktop\project\vba_tuner_to_eb7\output"
+file_path = r"C:\Users\DAPH-L\Desktop\eb7_project\1_3.10.5세만기_PV산출_최종_송부.xlsm"
+output_dir = r"C:\Users\DAPH-L\Desktop\eb7_project\output"
 result_print_out(file_path, output_dir)
 

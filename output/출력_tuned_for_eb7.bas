@@ -1,114 +1,114 @@
-Sub Pì¶œë ¥()
-      
-      txt(1) = covcode
-      txt(2) = n
-      txt(3) = sex
-      txt(4) = insperiod
-      txt(5) = premperiod
-      txt(6) = renew
-      txt(7) = lev
-      txt(8) = age
-      txt(9) = youl
-      txt(10) = drv
-      txt(11) = "ê³„ì§€P=" & ì˜ì—…ì›”ë‚©1ì›
-      txt(12) = "ìƒí’ˆP=" & ìƒí’ˆp
-    
-      Dim MAL As Long
-      MAL = 12
-      
-              For a = 1 To MAL
-              If a < MAL Then
-                Print #1, Trim(txt(a)); " ; ";      ' í”„ë¦°íŠ¸í•´ë¼ #1ì— íŠ¸ë¦¼ì´ë¼ëŠ” ë°°ì—´
-              Else
-                Print #1, Trim(txt(MAL))
-              End If
-              Next
+Sub PÃâ·Â()
+
+txt(1) = covcode
+txt(2) = n
+txt(3) = sex
+txt(4) = insperiod
+txt(5) = premperiod
+txt(6) = renew
+txt(7) = lev
+txt(8) = age
+txt(9) = youl
+txt(10) = drv
+txt(11) = "°èÁöP=" & ¿µ¾÷¿ù³³1¿ø
+txt(12) = "»óÇ°P=" & »óÇ°p
+
+Dim MAL As Long
+MAL = 12
+
+For a = 1 To MAL
+If a < MAL Then
+Print #1, Trim(txt(a)); " ; ";      ' ÇÁ¸°Æ®ÇØ¶ó #1¿¡ Æ®¸²ÀÌ¶ó´Â ¹è¿­
+Else
+Print #1, Trim(txt(MAL))
+End If
+Next
 
 End Sub
-Sub Vì¶œë ¥()
+Sub VÃâ·Â()
 
-      txt(1) = covcode
-      txt(2) = n
-      txt(3) = sex
-      txt(4) = insperiod
-      txt(5) = premperiod
-      txt(6) = renew
-      txt(7) = lev
-      txt(8) = age
-      txt(9) = youl
-      txt(10) = drv
-      txt(11) = "ê³„ì§€V=" & Sum_ê³„ì§€V
-      txt(12) = "ìƒí’ˆV=" & Sum_ìƒí’ˆV
-      txt(13) = "ê³„ì§€í•œë„=" & Int(ì‹ ê³„ì•½ë¹„í•œë„)
-      txt(14) = "ìƒí’ˆí•œë„=" & ìƒí’ˆí•œë„
-      txt(15) = "ê³„ì§€ìˆœë³´=" & ìˆœp
-      txt(16) = "ìƒí’ˆìˆœë³´=" & ìƒí’ˆnp
-    
-      Dim MAL As Long
+txt(1) = covcode
+txt(2) = n
+txt(3) = sex
+txt(4) = insperiod
+txt(5) = premperiod
+txt(6) = renew
+txt(7) = lev
+txt(8) = age
+txt(9) = youl
+txt(10) = drv
+txt(11) = "°èÁöV=" & Sum_°èÁöV
+txt(12) = "»óÇ°V=" & Sum_»óÇ°V
+txt(13) = "°èÁöÇÑµµ=" & Int(½Å°è¾àºñÇÑµµ)
+txt(14) = "»óÇ°ÇÑµµ=" & »óÇ°ÇÑµµ
+txt(15) = "°èÁö¼øº¸=" & ¼øp
+txt(16) = "»óÇ°¼øº¸=" & »óÇ°np
+
+Dim MAL As Long
 '      MAL = 12 + nn
-       'MAL = 11
-       MAL = 16
-            For a = 1 To MAL
-                  If a < MAL Then
-                                Print #2, Trim(txt(a)); ";";
-                  Else
-                                Print #2, Trim(txt(MAL))
-                  End If
-            Next
+'MAL = 11
+MAL = 16
+For a = 1 To MAL
+If a < MAL Then
+Print #2, Trim(txt(a)); ";";
+Else
+Print #2, Trim(txt(MAL))
+End If
+Next
 
 End Sub
-Sub í•œë„ì¶œë ¥()
+Sub ÇÑµµÃâ·Â()
 
-      txt(1) = covcode
-      txt(2) = n
-      txt(3) = sex
-      txt(4) = insperiod
-      txt(5) = premperiod
-      txt(6) = renew
-      txt(7) = lev
-      txt(8) = age
-      txt(9) = youl
-      txt(10) = drv
-      txt(11) = "í•œë„=" & Int(ì‹ ê³„ì•½ë¹„í•œë„)
-      txt(12) = "ì‹ ê³„ì•½ë¹„=" & ì‚¬ìš©ì‹ ê³„ì•½ë¹„
-    
-      Dim MAL As Long
-       MAL = 12
-            For a = 1 To MAL
-                  If a < MAL Then
-                                Print #3, Trim(txt(a)); ";";
-                  Else
-                                Print #3, Trim(txt(MAL))
-                  End If
-            Next
+txt(1) = covcode
+txt(2) = n
+txt(3) = sex
+txt(4) = insperiod
+txt(5) = premperiod
+txt(6) = renew
+txt(7) = lev
+txt(8) = age
+txt(9) = youl
+txt(10) = drv
+txt(11) = "ÇÑµµ=" & Int(½Å°è¾àºñÇÑµµ)
+txt(12) = "½Å°è¾àºñ=" & »ç¿ë½Å°è¾àºñ
+
+Dim MAL As Long
+MAL = 12
+For a = 1 To MAL
+If a < MAL Then
+Print #3, Trim(txt(a)); ";";
+Else
+Print #3, Trim(txt(MAL))
+End If
+Next
 
 End Sub
-Sub sì¶œë ¥()
+Sub sÃâ·Â()
 Select Case jong
-    Case 1
-    Sheets("ì˜ˆì‚¬ë¹„1ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
-    Case 2
-    Sheets("ì˜ˆì‚¬ë¹„2ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
-    Case 3
-    Sheets("ì˜ˆì‚¬ë¹„3ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
-    Case 4
-    Sheets("ì˜ˆì‚¬ë¹„4ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
+Case 1
+Sheets("¿¹»çºñ1Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
+Case 2
+Sheets("¿¹»çºñ2Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
+Case 3
+Sheets("¿¹»çºñ3Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
+Case 4
+Sheets("¿¹»çºñ4Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))) = s
 End Select
 End Sub
 
-Sub ì¼€ì´ìŠ¤ì¶œë ¥()
-Sheets("ì¶œë ¥").Cells(k, 1) = jong
-Sheets("ì¶œë ¥").Cells(k, 2) = sex
-Sheets("ì¶œë ¥").Cells(k, 3) = covcode
-Sheets("ì¶œë ¥").Cells(k, 4) = "" 'insperiod
-Sheets("ì¶œë ¥").Cells(k, 5) = "" 'premperiod
-Sheets("ì¶œë ¥").Cells(k, 6) = "" 'renew
-Sheets("ì¶œë ¥").Cells(k, 7) = age
-Sheets("ì¶œë ¥").Cells(k, 8) = lev
-Sheets("ì¶œë ¥").Cells(k, 9) = "" 'youl
-Sheets("ì¶œë ¥").Cells(k, 10) = qxì‚°ì¶œ(n, 1, sex, lev, age)
-Sheets("ì¶œë ¥").Cells(k, 11) = qxì‚°ì¶œ(n, 2, sex, lev, age)
-Sheets("ì¶œë ¥").Cells(k, 12) = ""
-Sheets("ì¶œë ¥").Cells(k, 13) = ""
+Sub ÄÉÀÌ½ºÃâ·Â()
+Sheets("Ãâ·Â").Cells(k, 1) = jong
+Sheets("Ãâ·Â").Cells(k, 2) = sex
+Sheets("Ãâ·Â").Cells(k, 3) = covcode
+Sheets("Ãâ·Â").Cells(k, 4) = "" 'insperiod
+Sheets("Ãâ·Â").Cells(k, 5) = "" 'premperiod
+Sheets("Ãâ·Â").Cells(k, 6) = "" 'renew
+Sheets("Ãâ·Â").Cells(k, 7) = age
+Sheets("Ãâ·Â").Cells(k, 8) = lev
+Sheets("Ãâ·Â").Cells(k, 9) = "" 'youl
+Sheets("Ãâ·Â").Cells(k, 10) = qx»êÃâ(n, 1, sex, lev, age)
+Sheets("Ãâ·Â").Cells(k, 11) = qx»êÃâ(n, 2, sex, lev, age)
+Sheets("Ãâ·Â").Cells(k, 12) = ""
+Sheets("Ãâ·Â").Cells(k, 13) = ""
 k = k + 1
 End Sub

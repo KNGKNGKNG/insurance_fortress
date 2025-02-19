@@ -1,483 +1,483 @@
-Sub ê³„ì‚°ê¸°ìˆ˜()
+Sub °è»ê±â¼ö()
 
- dx(1, 0) = 100000
- dx1(1, 0) = 100000
- dx2(1, 0) = 100000
- dxë‚©ë©´(1, 0) = 100000
+dx(1, 0) = 100000
+dx1(1, 0) = 100000
+dx2(1, 0) = 100000
+dx³³¸é(1, 0) = 100000
 
 For i = 0 To insperiod
-    cx1(1, i) = 0
-    cx2(1, i) = 0
-    x = age + i
-    Select Case calc_type 'ê³„ì‚°ê¸°ìˆ˜ìœ í˜•
-      Case 1      '#1íšŒí•œ, ë‚©ë©´ì‚¬ìœ  ê°™ìŒ, ë‚©ë©´ì‚¬ìœ ì— í¬í•¨ ì•”X
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 2      '#ë¬´íƒˆí‡´, ë‚©ë©´ì´ë‘ ìƒê´€X
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 3      '#íƒˆí‡´, ë‚©ë©´ì´ë‘ ìƒê´€X + ì œ/ê²½ ì§„ë‹¨ë¹„
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 4      '#íƒˆí‡´, ë‡Œì¡¸ì¤‘ í¬í•¨
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 5      '#íƒˆí‡´, ê¸‰ì„±ì‹¬ê·¼ê²½ìƒ‰ì¦ í¬í•¨
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 6      '#íƒˆí‡´, ì•”+íƒˆí‡´ìœ„í—˜ë¥  + ê¸°/ê°‘ì§„ë‹¨ë¹„
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 7      '#ë³´ì¥ë³´í—˜ë£Œë‚©ì…ë©´ì œëŒ€ìƒë³´ì¥
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-      
-      Case 8      '#íƒˆí‡´, ì•”, íƒˆí‡´ìœ„í—˜ë¥ ì´ ì•” ì—°ê´€(ê°ì•¡ë°ë©´ì±…ì—†ìŒ), + í†µí•©ì•”ì§„ë‹¨ë¹„
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 9      '#íƒˆí‡´, ì•”, íƒˆí‡´ìœ„í—˜ë¥ ì´ ì•” ì—°ê´€(ê°ì•¡ë°ë©´ì±…O) + ì•”ì§„ë‹¨ë¹„
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-     Case 10      '#íƒˆí‡´, ì•”ì‚°ì •íŠ¹ë¡€
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-     Case 11      '#ë¬´íƒˆí‡´, ì•” ì—°ê´€(ê°ì•¡ë°ë©´ì±…ì—†ìŒ)
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 12      '#ë¬´íƒˆí‡´, ì•” ì—°ê´€(ê°ì•¡ë°ë©´ì±…O)
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 13
-      Case 14
-       Case 15      '#ì•”ì§ì ‘ì¹˜ë£Œì…ì›/ìš”ì–‘ë³‘ì›ì…ì›(ê°ì•¡ë°ë©´ì±…ì—†ìŒ)
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 16      '#ì•”ì§ì ‘ì¹˜ë£Œì…ì›/ìš”ì–‘ë³‘ì›ì…ì›(ê°ì•¡ë°ë©´ì±…O)
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.1 * qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 17      '#ë‡Œí˜ˆê´€ì§ˆí™˜ìˆ˜ìˆ ,í—ˆí˜ˆì„±ì‹¬ì¥ì§ˆí™˜ìˆ˜ìˆ (1íšŒí•œ)
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 18      '#7ëŒ€ê¸°ê´€
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.5 * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 19      '#ìƒí•´ì‚¬ë§.ì§ˆë³‘ì‚¬ë§
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) + qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v
-        z(i) = (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) / 2) / (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * z(i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x) * z(i)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x) * z(i)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) * z(i)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x) * z(i)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x) * z(i)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x) * z(i)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) + qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 20      '#íŠ¹ì •ìœ ì‚¬ì•”í•­ì•”ë°©ì‚¬ì„ /ì•½ë¬¼
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        dx1(1, i + 1) = dx1(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        dx2(1, i + 1) = dx2(1, i) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * (dx1(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + dx2(1, i) * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-       Case 21      '#í‘œì í•­ì•”ì•½ë¬¼í—ˆê°€ì¹˜ë£Œë¹„(1íšŒí•œ) (ê°ì•¡ë°ë©´ì±…O)
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.75, 1) * (qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x))) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 22      '#í‘œì í•­ì•”ì•½ë¬¼í—ˆê°€ì¹˜ë£Œë¹„(1íšŒí•œ) (ê°ì•¡ë°ë©´ì±…ì—†ìŒ)
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * (qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + ì•”(youl, 1, sex, 1, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 23      '#í‘œì í•­ì•”ì•½ë¬¼í—ˆê°€ì¹˜ë£Œë¹„(ì—°ê°„1íšŒí•œ) (ê°ì•¡ë°ë©´ì±…O)
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x))) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 24      '#ì•”ì§ì ‘ì¹˜ë£Œí†µì›ë¹„,ì§ì ‘ì¹˜ë£Œìƒê¸‰ì¢…í•©ë³‘ì›í†µì›ë¹„(ê°ì•¡ë°ë©´ì±…ì—†ìŒ)
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 25      '#ì•”ì§ì ‘ì¹˜ë£Œí†µì›ë¹„,ì§ì ‘ì¹˜ë£Œìƒê¸‰ì¢…í•©ë³‘ì›í†µì›ë¹„(ê°ì•¡ë°ë©´ì±…O)
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 26      '#í•­ì•”ì–‘ì„±ì/ì„¸ê¸°ì¡°ì ˆë°©ì‚¬ì„ (ê°ì•¡ë°ë©´ì±…O)
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.75, 1) * (qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x))) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 27      '##í•­ì•”ì–‘ì„±ì/ì„¸ê¸°ì¡°ì ˆë°©ì‚¬ì„ (ê°ì•¡ë°ë©´ì±…ì—†ìŒ)
-         dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * (qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + ì•”(youl, 1, sex, 1, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 28      '#4ëŒ€ìœ ì‚¬ì•”ìˆ˜ìˆ ë¹„
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 29      '#ë³´ì¥ë³´í—˜ë£Œë‚©ì…ì§€ì›
-        dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5 * 12 * ((1 - v ^ (insperiod - i - 1)) / (1 - v) + 0.5 * v ^ (insperiod - i - 1))
-        
-     Case 30      '#íŠ¹ì •ìƒí•´ì„±ë‡Œì¶œí˜ˆì§„ë‹¨ë¹„
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x))
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-     Case 31      '#ë‚¨ì„±ìƒì‹ê¸°ê´€ë°ìœ ë°©ì „ì´ì•”
-        dx(1, i + 1) = dx(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * (1 - (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)))) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 32      '#í•­ì•”ë°©ì‚¬ì„ /ì•½ë¬¼ì¹˜ë£Œë¹„(ì¹˜ë£Œ1íšŒë‹¹) ê°ì•¡ë©´ì±…O
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-       Case 33      '#í•­ì•”ë°©ì‚¬ì„ /ì•½ë¬¼ì¹˜ë£Œë¹„(ì¹˜ë£Œ1íšŒë‹¹) ê°ì•¡ë©´ì±…ì—†ìŒ
-         dx(1, i + 1) = dx(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + 0.2 * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5
-        
-      Case 34
-        
-      Case 35
-        
-      Case 36      '##ì‹ ì•”ì¹˜ë£Œë¹„(ì•”)
-        dx(1, i + 1) = dx(1, i) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dx(1, i) * (1 - ì•”(youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * ì•”(youl, 1, sex, 1, x) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (1.5) * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (2.5) * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (3.5) * qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (4.5) * qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) / ì•”(youl, 1, sex, 1, x)
-        
-      Case 37      '##ì‹ ì•”ì¹˜ë£Œë¹„(íŠ¹ì •ìœ ì‚¬ì•”)
-        dx(1, i + 1) = dx(1, i) * (1 - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dx(1, i) * (1 - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (1.5) * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (2.5) * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (3.5) * qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (4.5) * qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) / (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x))
-        
-      Case 38      '##ì‹ ì•”ì¹˜ë£Œë¹„(ì•”,íŠ¹ì •ìœ ì‚¬ì•”)
-        dx(1, i + 1) = dx(1, i) * (1 - ì•”(youl, 1, sex, 1, x) - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        If ë‚©ì…ë©´ì œ = 1 Then
-          dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v * (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - ì•”(youl, 1, sex, 1, x) - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)
-        Else
-          dxë‚©ë©´(1, i + 1) = dx(1, i) * (1 - ì•”(youl, 1, sex, 1, x) - ê¸°íƒ€(youl, 1, sex, 1, x) - ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i)) * v
-        End If
-        cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (ì•”(youl, 1, sex, 1, x) + ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) * (1 - í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (1.5) * qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (2.5) * qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (3.5) * qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) + v ^ (4.5) * qxì‚°ì¶œ(n, 5, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) / (ì•”(youl, 1, sex, 1, x) + ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x))
-        
-       Case 39      '##ì‹ ì•”ì¹˜ë£Œë¹„(ì•”,ë°œìƒììš©)
-        dx(1, i + 1) = dx(1, i) * v
-        dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * v
-        cx(1, i) = dx(1, i) * qxì‚°ì¶œ(n, Application.Min(i + 1, 5), sex, lev, age) * ê³„ìˆ˜(youl, n, sex, age) / ì•”(youl, 1, sex, 1, age) * v ^ 0.5
-                
-      Case 40      '##ì‹ ì•”ì¹˜ë£Œë¹„(íŠ¹ì •ìœ ì‚¬ì•”,ë°œìƒììš©)
-        dx(1, i + 1) = dx(1, i) * v
-        dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * v
-        cx(1, i) = dx(1, i) * qxì‚°ì¶œ(n, Application.Min(i + 1, 5), sex, lev, age) * ê³„ìˆ˜(youl, n, sex, age) / (ê¸°íƒ€(youl, 1, sex, 1, age) + ê°‘ìƒì„ (youl, 1, sex, 1, age)) * v ^ 0.5
-       
-      Case 41      '##ì‹ ì•”ì¹˜ë£Œë¹„(ì•”,íŠ¹ì •ìœ ì‚¬ì•”,ë°œìƒììš©)
-        dx(1, i + 1) = dx(1, i) * v
-        dxë‚©ë©´(1, i + 1) = dxë‚©ë©´(1, i) * v
-        cx(1, i) = dx(1, i) * qxì‚°ì¶œ(n, Application.Min(i + 1, 5), sex, lev, age) * ê³„ìˆ˜(youl, n, sex, age) / (ì•”(youl, 1, sex, 1, age) + ê¸°íƒ€(youl, 1, sex, 1, age) + ê°‘ìƒì„ (youl, 1, sex, 1, age)) * v ^ 0.5
-    End Select
-    
-    If ë¬´í•´ì§€ = 1 Then
-    Select Case calc_type
-    Case 1, 3, 4, 5, 6, 8, 9, 10, 17, 21, 22, 30 'íƒˆí‡´
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) / 2) * v ^ 0.5 / face
-    Case 2, 11, 12, 15, 16, 18, 19, 20, 23, 24, 25, 28, 32, 33 'ë¬´íƒˆí‡´
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * v ^ 0.5 / face
-    Case 7
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (1 - (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (1 - (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
-    Case 26, 27
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (qxì‚°ì¶œ(n, 1, sex, lev, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) + qxì‚°ì¶œ(n, 3, sex, lev, x)) * ê³„ìˆ˜(youl, n, sex, x) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (qxì‚°ì¶œ(n, 1, sex, lev, x) + qxì‚°ì¶œ(n, 2, sex, lev, x) + qxì‚°ì¶œ(n, 3, sex, lev, x)) * ê³„ìˆ˜(youl, n, sex, x) / 2) * v ^ 0.5 / face
-    Case 29
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (1 - (1 - ìƒí•´(youl, 1, sex, lev, x)) * (1 - ì§ˆë³‘(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ì•”(youl, 1, sex, 1, x) - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x) - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 3, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 4, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - ë‡Œì¡¸ì¤‘(youl, 1, sex, 1, x)) * (1 - ê¸‰ì„±(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - ìƒí•´ì„±ë‡Œì¶œí˜ˆ(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
-    Case 31
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (1 - (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (1 - (1 - qxì‚°ì¶œ(n, 1, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x)) * (1 - qxì‚°ì¶œ(n, 2, sex, lev, x) * ê³„ìˆ˜(youl, n, sex, x))) / 2) * v ^ 0.5 / face
-    Case 36
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - ì•”(youl, 1, sex, 1, x) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - ì•”(youl, 1, sex, 1, x) / 2) * v ^ 0.5 / face
-    Case 37
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
-    Case 38
-    cx1(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, 1) + í™˜ê¸‰ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * dxë‚©ë©´(1, i) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (ì•”(youl, 1, sex, 1, x) + ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
-    cx2(1, i) = w_rate(ë¬´í•´ì§€, ipno_n, i) * (ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, 1) + ì¤€ë¹„ê¸ˆ_í‘œì¤€(i + 1, 1)) / 2 * (dx(1, i) - dxë‚©ë©´(1, i)) * í•´ì§€ìœ¨(ë¬´í•´ì§€, ipno_n, i) * (1 - (ì•”(youl, 1, sex, 1, x) + ê¸°íƒ€(youl, 1, sex, 1, x) + ê°‘ìƒì„ (youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
-    End Select
-    End If
+cx1(1, i) = 0
+cx2(1, i) = 0
+x = age + i
+Select Case calc_type '°è»ê±â¼öÀ¯Çü
+Case 1      '#1È¸ÇÑ, ³³¸é»çÀ¯ °°À½, ³³¸é»çÀ¯¿¡ Æ÷ÇÔ ¾ÏX
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 2      '#¹«Å»Åğ, ³³¸éÀÌ¶û »ó°üX
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 3      '#Å»Åğ, ³³¸éÀÌ¶û »ó°üX + Á¦/°æ Áø´Üºñ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 4      '#Å»Åğ, ³úÁ¹Áß Æ÷ÇÔ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 5      '#Å»Åğ, ±Ş¼º½É±Ù°æ»öÁõ Æ÷ÇÔ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 6      '#Å»Åğ, ¾Ï+Å»ÅğÀ§Çè·ü + ±â/°©Áø´Üºñ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 7      '#º¸Àåº¸Çè·á³³ÀÔ¸éÁ¦´ë»óº¸Àå
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 8      '#Å»Åğ, ¾Ï, Å»ÅğÀ§Çè·üÀÌ ¾Ï ¿¬°ü(°¨¾×¹×¸éÃ¥¾øÀ½), + ÅëÇÕ¾ÏÁø´Üºñ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 9      '#Å»Åğ, ¾Ï, Å»ÅğÀ§Çè·üÀÌ ¾Ï ¿¬°ü(°¨¾×¹×¸éÃ¥O) + ¾ÏÁø´Üºñ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 10      '#Å»Åğ, ¾Ï»êÁ¤Æ¯·Ê
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 11      '#¹«Å»Åğ, ¾Ï ¿¬°ü(°¨¾×¹×¸éÃ¥¾øÀ½)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 12      '#¹«Å»Åğ, ¾Ï ¿¬°ü(°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 13
+Case 14
+Case 15      '#¾ÏÁ÷Á¢Ä¡·áÀÔ¿ø/¿ä¾çº´¿øÀÔ¿ø(°¨¾×¹×¸éÃ¥¾øÀ½)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 16      '#¾ÏÁ÷Á¢Ä¡·áÀÔ¿ø/¿ä¾çº´¿øÀÔ¿ø(°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.1 * qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 17      '#³úÇ÷°üÁúÈ¯¼ö¼ú,ÇãÇ÷¼º½ÉÀåÁúÈ¯¼ö¼ú(1È¸ÇÑ)
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 18      '#7´ë±â°ü
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.5 * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 19      '#»óÇØ»ç¸Á.Áúº´»ç¸Á
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) + qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v
+z(i) = (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) / 2) / (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x))
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * z(i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x) * z(i)) * (1 - Áúº´(youl, 1, sex, 1, x) * z(i)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) * z(i)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x) * z(i)) * (1 - ±Ş¼º(youl, 1, sex, 1, x) * z(i)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x) * z(i)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) + qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 20      '#Æ¯Á¤À¯»ç¾ÏÇ×¾Ï¹æ»ç¼±/¾à¹°
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+dx1(1, i + 1) = dx1(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+dx2(1, i + 1) = dx2(1, i) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * (dx1(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + dx2(1, i) * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 21      '#Ç¥ÀûÇ×¾Ï¾à¹°Çã°¡Ä¡·áºñ(1È¸ÇÑ) (°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.75, 1) * (qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x))) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 22      '#Ç¥ÀûÇ×¾Ï¾à¹°Çã°¡Ä¡·áºñ(1È¸ÇÑ) (°¨¾×¹×¸éÃ¥¾øÀ½)
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * (qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + ¾Ï(youl, 1, sex, 1, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 23      '#Ç¥ÀûÇ×¾Ï¾à¹°Çã°¡Ä¡·áºñ(¿¬°£1È¸ÇÑ) (°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x))) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 24      '#¾ÏÁ÷Á¢Ä¡·áÅë¿øºñ,Á÷Á¢Ä¡·á»ó±ŞÁ¾ÇÕº´¿øÅë¿øºñ(°¨¾×¹×¸éÃ¥¾øÀ½)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 25      '#¾ÏÁ÷Á¢Ä¡·áÅë¿øºñ,Á÷Á¢Ä¡·á»ó±ŞÁ¾ÇÕº´¿øÅë¿øºñ(°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 26      '#Ç×¾Ï¾ç¼ºÀÚ/¼¼±âÁ¶Àı¹æ»ç¼±(°¨¾×¹×¸éÃ¥O)
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.75, 1) * (qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x))) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 27      '##Ç×¾Ï¾ç¼ºÀÚ/¼¼±âÁ¶Àı¹æ»ç¼±(°¨¾×¹×¸éÃ¥¾øÀ½)
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * (qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + ¾Ï(youl, 1, sex, 1, x)) - IIf(i = 0 And renew <> 2, 0.25, 0) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x))) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 28      '#4´ëÀ¯»ç¾Ï¼ö¼úºñ
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 29      '#º¸Àåº¸Çè·á³³ÀÔÁö¿ø
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x))) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5 * 12 * ((1 - v ^ (insperiod - i - 1)) / (1 - v) + 0.5 * v ^ (insperiod - i - 1))
+
+Case 30      '#Æ¯Á¤»óÇØ¼º³úÃâÇ÷Áø´Üºñ
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x))
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 31      '#³²¼º»ı½Ä±â°ü¹×À¯¹æÀüÀÌ¾Ï
+dx(1, i + 1) = dx(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - IIf(i = 0 And renew <> 2, 0.25, 0) * (1 - (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)))) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (1 - (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x))) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 32      '#Ç×¾Ï¹æ»ç¼±/¾à¹°Ä¡·áºñ(Ä¡·á1È¸´ç) °¨¾×¸éÃ¥O
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (IIf(i = 0 And renew <> 2, 0.75, 1) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 33      '#Ç×¾Ï¹æ»ç¼±/¾à¹°Ä¡·áºñ(Ä¡·á1È¸´ç) °¨¾×¸éÃ¥¾øÀ½
+dx(1, i + 1) = dx(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + 0.2 * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5
+
+Case 34
+
+Case 35
+
+Case 36      '##½Å¾ÏÄ¡·áºñ(¾Ï)
+dx(1, i + 1) = dx(1, i) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx(1, i) * (1 - ¾Ï(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * ¾Ï(youl, 1, sex, 1, x) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (1.5) * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (2.5) * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (3.5) * qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (4.5) * qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) / ¾Ï(youl, 1, sex, 1, x)
+
+Case 37      '##½Å¾ÏÄ¡·áºñ(Æ¯Á¤À¯»ç¾Ï)
+dx(1, i + 1) = dx(1, i) * (1 - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx(1, i) * (1 - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (1.5) * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (2.5) * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (3.5) * qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (4.5) * qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) / (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x))
+
+Case 38      '##½Å¾ÏÄ¡·áºñ(¾Ï,Æ¯Á¤À¯»ç¾Ï)
+dx(1, i + 1) = dx(1, i) * (1 - ¾Ï(youl, 1, sex, 1, x) - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+If ³³ÀÔ¸éÁ¦ = 1 Then
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v * (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - ¾Ï(youl, 1, sex, 1, x) - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)
+Else
+dx³³¸é(1, i + 1) = dx(1, i) * (1 - ¾Ï(youl, 1, sex, 1, x) - ±âÅ¸(youl, 1, sex, 1, x) - °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i)) * v
+End If
+cx(1, i) = IIf(i = 0 And renew <> 2, AA, 1) * dx(1, i) * (¾Ï(youl, 1, sex, 1, x) + ±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) * (1 - ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) / 2) * v ^ 0.5 * (v ^ (0.5) * qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (1.5) * qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (2.5) * qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (3.5) * qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x) + v ^ (4.5) * qx»êÃâ(n, 5, sex, lev, x) * °è¼ö(youl, n, sex, x)) / (¾Ï(youl, 1, sex, 1, x) + ±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x))
+
+Case 39      '##½Å¾ÏÄ¡·áºñ(¾Ï,¹ß»ıÀÚ¿ë)
+dx(1, i + 1) = dx(1, i) * v
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * v
+cx(1, i) = dx(1, i) * qx»êÃâ(n, Application.Min(i + 1, 5), sex, lev, age) * °è¼ö(youl, n, sex, age) / ¾Ï(youl, 1, sex, 1, age) * v ^ 0.5
+
+Case 40      '##½Å¾ÏÄ¡·áºñ(Æ¯Á¤À¯»ç¾Ï,¹ß»ıÀÚ¿ë)
+dx(1, i + 1) = dx(1, i) * v
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * v
+cx(1, i) = dx(1, i) * qx»êÃâ(n, Application.Min(i + 1, 5), sex, lev, age) * °è¼ö(youl, n, sex, age) / (±âÅ¸(youl, 1, sex, 1, age) + °©»ó¼±(youl, 1, sex, 1, age)) * v ^ 0.5
+
+Case 41      '##½Å¾ÏÄ¡·áºñ(¾Ï,Æ¯Á¤À¯»ç¾Ï,¹ß»ıÀÚ¿ë)
+dx(1, i + 1) = dx(1, i) * v
+dx³³¸é(1, i + 1) = dx³³¸é(1, i) * v
+cx(1, i) = dx(1, i) * qx»êÃâ(n, Application.Min(i + 1, 5), sex, lev, age) * °è¼ö(youl, n, sex, age) / (¾Ï(youl, 1, sex, 1, age) + ±âÅ¸(youl, 1, sex, 1, age) + °©»ó¼±(youl, 1, sex, 1, age)) * v ^ 0.5
+End Select
+
+If ¹«ÇØÁö = 1 Then
+Select Case calc_type
+Case 1, 3, 4, 5, 6, 8, 9, 10, 17, 21, 22, 30 'Å»Åğ
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) / 2) * v ^ 0.5 / face
+Case 2, 11, 12, 15, 16, 18, 19, 20, 23, 24, 25, 28, 32, 33 '¹«Å»Åğ
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * v ^ 0.5 / face
+Case 7
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (1 - (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (1 - (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
+Case 26, 27
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (qx»êÃâ(n, 1, sex, lev, x) + qx»êÃâ(n, 2, sex, lev, x) + qx»êÃâ(n, 3, sex, lev, x)) * °è¼ö(youl, n, sex, x) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (qx»êÃâ(n, 1, sex, lev, x) + qx»êÃâ(n, 2, sex, lev, x) + qx»êÃâ(n, 3, sex, lev, x)) * °è¼ö(youl, n, sex, x) / 2) * v ^ 0.5 / face
+Case 29
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (1 - (1 - »óÇØ(youl, 1, sex, lev, x)) * (1 - Áúº´(youl, 1, sex, 1, x)) * (1 - IIf(i = 0 And renew <> 2, 0.75, 1) * ¾Ï(youl, 1, sex, 1, x) - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x) - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 3, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 4, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - ³úÁ¹Áß(youl, 1, sex, 1, x)) * (1 - ±Ş¼º(youl, 1, sex, 1, x)) * IIf(jong = 1 Or jong = 3, (1 - »óÇØ¼º³úÃâÇ÷(youl, 1, sex, 1, x)), 1)) / 2) * v ^ 0.5 / face
+Case 31
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (1 - (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x))) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (1 - (1 - qx»êÃâ(n, 1, sex, lev, x) * °è¼ö(youl, n, sex, x)) * (1 - qx»êÃâ(n, 2, sex, lev, x) * °è¼ö(youl, n, sex, x))) / 2) * v ^ 0.5 / face
+Case 36
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - ¾Ï(youl, 1, sex, 1, x) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - ¾Ï(youl, 1, sex, 1, x) / 2) * v ^ 0.5 / face
+Case 37
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
+Case 38
+cx1(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (È¯±Ş±İ_Ç¥ÁØ(i, 1) + È¯±Ş±İ_Ç¥ÁØ(i + 1, 1)) / 2 * dx³³¸é(1, i) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (¾Ï(youl, 1, sex, 1, x) + ±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
+cx2(1, i) = w_rate(¹«ÇØÁö, ipno_n, i) * (ÁØºñ±İ_Ç¥ÁØ(i, 1) + ÁØºñ±İ_Ç¥ÁØ(i + 1, 1)) / 2 * (dx(1, i) - dx³³¸é(1, i)) * ÇØÁöÀ²(¹«ÇØÁö, ipno_n, i) * (1 - (¾Ï(youl, 1, sex, 1, x) + ±âÅ¸(youl, 1, sex, 1, x) + °©»ó¼±(youl, 1, sex, 1, x)) / 2) * v ^ 0.5 / face
+End Select
+End If
 
 Next i
-ê³„ì‚°ê¸°ìˆ˜ì í”„:
+°è»ê±â¼öÁ¡ÇÁ:
 
 End Sub
-Sub ê³„ì‚°ê¸°ìˆ˜í•©()
+Sub °è»ê±â¼öÇÕ()
 
-  j_e = insperiod
-  
-  For j = 0 To j_e
-    
-    mxsum = 0
-    nxsum = 0
-    nxsum_k = 0
-    For jj = j To j_e
-      mxsum = mxsum + cx(1, jj) + cx1(1, jj) + cx2(1, jj)
-      nxsum = nxsum + dxë‚©ë©´(1, jj)
-      nxsum_k = nxsum_k + dx(1, jj)
-    Next jj
-    mx(j) = mxsum
-    nxë‚©ë©´(j) = nxsum
-    nx(j) = nxsum_k
-  Next j
-  
-  nxì›”ë‚© = (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod)) - 11 / 24 * (dxë‚©ë©´(1, 0) - dxë‚©ë©´(1, premperiod))
+j_e = insperiod
+
+For j = 0 To j_e
+
+mxsum = 0
+nxsum = 0
+nxsum_k = 0
+For jj = j To j_e
+mxsum = mxsum + cx(1, jj) + cx1(1, jj) + cx2(1, jj)
+nxsum = nxsum + dx³³¸é(1, jj)
+nxsum_k = nxsum_k + dx(1, jj)
+Next jj
+mx(j) = mxsum
+nx³³¸é(j) = nxsum
+nx(j) = nxsum_k
+Next j
+
+nx¿ù³³ = (nx³³¸é(0) - nx³³¸é(premperiod)) - 11 / 24 * (dx³³¸é(1, 0) - dx³³¸é(1, premperiod))
 End Sub
-Sub ìˆœë³´í—˜ë£Œê³„ì‚°()
+Sub ¼øº¸Çè·á°è»ê()
 
 bunja_p = mx(0) - mx(insperiod)
 
 If premperiod = 0 Then
-  ìˆœì—°ë‚©(irate) = bunja_p / dx(1, 0)
-  ìˆœì›”ë‚©(irate) = bunja_p / dx(1, 0)
-  ìˆœí•œë„(irate) = ìˆœì—°ë‚©(irate)
+¼ø¿¬³³(irate) = bunja_p / dx(1, 0)
+¼ø¿ù³³(irate) = bunja_p / dx(1, 0)
+¼øÇÑµµ(irate) = ¼ø¿¬³³(irate)
 Else
-  ìˆœì—°ë‚©(irate) = bunja_p / (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod))
-  ìˆœì›”ë‚©(irate) = bunja_p / (nxì›”ë‚© * 12)
-  ìˆœí•œë„(irate) = bunja_p / (nxë‚©ë©´(0) - nxë‚©ë©´(handoprem))
+¼ø¿¬³³(irate) = bunja_p / (nx³³¸é(0) - nx³³¸é(premperiod))
+¼ø¿ù³³(irate) = bunja_p / (nx¿ù³³ * 12)
+¼øÇÑµµ(irate) = bunja_p / (nx³³¸é(0) - nx³³¸é(handoprem))
 End If
 
-ìˆœí•œë„1ì›(irate) = ìˆœí•œë„(irate) * face
-ìˆœì—°ë‚©1ì›(irate) = Round(ìˆœì—°ë‚©(irate) * face)
-ìˆœì›”ë‚©1ì›(irate) = Round(ìˆœì›”ë‚©(irate) * face)
+¼øÇÑµµ1¿ø(irate) = ¼øÇÑµµ(irate) * face
+¼ø¿¬³³1¿ø(irate) = Round(¼ø¿¬³³(irate) * face)
+¼ø¿ù³³1¿ø(irate) = Round(¼ø¿ù³³(irate) * face)
 End Sub
-Sub ì˜ì—…ë³´í—˜ë£Œê³„ì‚°()
+Sub ¿µ¾÷º¸Çè·á°è»ê()
 
 If premperiod = 0 Then
-  ì˜ì—…ì—°ë‚© = ìˆœì—°ë‚©(1) '/ (1 - alpha2 - beta - ce) 'ì¼ì‹œë‚©
-  ì˜ì—…ì›”ë‚© = ìˆœì—°ë‚©(1)
+¿µ¾÷¿¬³³ = ¼ø¿¬³³(1) '/ (1 - alpha2 - beta - ce) 'ÀÏ½Ã³³
+¿µ¾÷¿ù³³ = ¼ø¿¬³³(1)
 Else
-  ì˜ì—…ì—°ë‚© = (ìˆœì—°ë‚©(1) + alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n) * 100000 / (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod))) / (1 - beta(n, youl, renew) - ce - beta5 - (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod)) - alpha2(n, youl, renew, premperiod) * 100000 / (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod)))
-  ì˜ì—…ì›”ë‚© = (ìˆœì›”ë‚©(1) + alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n) * 100000 / (12 * nxì›”ë‚©)) / (1 - beta(n, youl, renew) - ce - beta5 - (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / nxì›”ë‚© - alpha2(n, youl, renew, premperiod) * 100000 / nxì›”ë‚©)
+¿µ¾÷¿¬³³ = (¼ø¿¬³³(1) + alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n) * 100000 / (nx³³¸é(0) - nx³³¸é(premperiod))) / (1 - beta(n, youl, renew) - ce - beta5 - (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / (nx³³¸é(0) - nx³³¸é(premperiod)) - alpha2(n, youl, renew, premperiod) * 100000 / (nx³³¸é(0) - nx³³¸é(premperiod)))
+¿µ¾÷¿ù³³ = (¼ø¿ù³³(1) + alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n) * 100000 / (12 * nx¿ù³³)) / (1 - beta(n, youl, renew) - ce - beta5 - (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / nx¿ù³³ - alpha2(n, youl, renew, premperiod) * 100000 / nx¿ù³³)
 End If
-  ì˜ì—…ì—°ë‚©1ì› = Round(ì˜ì—…ì—°ë‚© * face)
-  ì˜ì—…ì›”ë‚©1ì› = Round(ì˜ì—…ì›”ë‚© * face)
+¿µ¾÷¿¬³³1¿ø = Round(¿µ¾÷¿¬³³ * face)
+¿µ¾÷¿ù³³1¿ø = Round(¿µ¾÷¿ù³³ * face)
 
 If renew = 0 And gubun = "01" Then
-ìˆœp = Round((ìˆœì›”ë‚©(irate) + ì˜ì—…ì›”ë‚© * (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / nxì›”ë‚©) * face)
+¼øp = Round((¼ø¿ù³³(irate) + ¿µ¾÷¿ù³³ * (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) / nx¿ù³³) * face)
 Else
-ìˆœp = ìˆœì›”ë‚©1ì›(1)
+¼øp = ¼ø¿ù³³1¿ø(1)
 End If
 
 End Sub
-Sub í•œë„ì²´í¬()
+Sub ÇÑµµÃ¼Å©()
 
-sì‚¬ìš©ì—¬ë¶€ = Sheets("NSPë ˆì´ì•„ì›ƒ").Cells(3 + n, 42)
+s»ç¿ë¿©ºÎ = Sheets("NSP·¹ÀÌ¾Æ¿ô").Cells(3 + n, 42)
 
-í•´ì•½ê³µì œê³„ìˆ˜ = Application.Min(20, insperiod)
+ÇØ¾à°øÁ¦°è¼ö = Application.Min(20, insperiod)
 
 Select Case jong
-    Case 1
-    s = Sheets("ì˜ˆì‚¬ë¹„1ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
-    Case 2
-    s = Sheets("ì˜ˆì‚¬ë¹„2ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
-    Case 3
-    s = Sheets("ì˜ˆì‚¬ë¹„3ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
-    Case 4
-    s = Sheets("ì˜ˆì‚¬ë¹„4ì¢…").Cells(6 + nn, 39 + 4 * ë¬´í•´ì§€ + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
-  End Select
+Case 1
+s = Sheets("¿¹»çºñ1Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
+Case 2
+s = Sheets("¿¹»çºñ2Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
+Case 3
+s = Sheets("¿¹»çºñ3Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
+Case 4
+s = Sheets("¿¹»çºñ4Á¾").Cells(6 + nn, 39 + 4 * ¹«ÇØÁö + IIf(renew = 1, renewperi, IIf(renew = 2, 0, IIf(gubun = "01", (mangi / 10 - 7), ipno_n))))
+End Select
 
 
 If premperiod = 0 Then
-ì‹ ê³„ì•½ë¹„í•œë„ = 0
-ì‚¬ìš©ì‹ ê³„ì•½ë¹„ = 0
+½Å°è¾àºñÇÑµµ = 0
+»ç¿ë½Å°è¾àºñ = 0
 
 Else
-If sì‚¬ìš©ì—¬ë¶€ <> 0 Then
-  ì‹ ê³„ì•½ë¹„í•œë„ = (ìˆœí•œë„(1) * face * 0.05 * í•´ì•½ê³µì œê³„ìˆ˜ + s * face * 10 / 1000) 'ìˆœí•œë„1ì›(4)=í‘œì¤€ì—°ë‚©ìˆœë³´í—˜ë£Œ
+If s»ç¿ë¿©ºÎ <> 0 Then
+½Å°è¾àºñÇÑµµ = (¼øÇÑµµ(1) * face * 0.05 * ÇØ¾à°øÁ¦°è¼ö + s * face * 10 / 1000) '¼øÇÑµµ1¿ø(4)=Ç¥ÁØ¿¬³³¼øº¸Çè·á
 Else
-  ì‹ ê³„ì•½ë¹„í•œë„ = (ìˆœí•œë„(1) * face * (0.05 * í•´ì•½ê³µì œê³„ìˆ˜)) + ìˆœí•œë„(1) * face * 0.45
+½Å°è¾àºñÇÑµµ = (¼øÇÑµµ(1) * face * (0.05 * ÇØ¾à°øÁ¦°è¼ö)) + ¼øÇÑµµ(1) * face * 0.45
 End If
 
-ì‚¬ìš©ì‹ ê³„ì•½ë¹„ = ì˜ì—…ì›”ë‚©1ì› * alpha2(n, youl, renew, premperiod) * 12 + face * alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n)
+»ç¿ë½Å°è¾àºñ = ¿µ¾÷¿ù³³1¿ø * alpha2(n, youl, renew, premperiod) * 12 + face * alpha1(n, youl, renew, IIf(gubun = "01", (mangi / 10 - 7), 0), ipno_n)
 
 End If
 End Sub
-Sub ì¤€ë¹„ê¸ˆê³„ì‚°()
+Sub ÁØºñ±İ°è»ê()
 
-      For i = 0 To insperiod
-        If mangi = 5 Then
-          ì¤€ë¹„ê¸ˆ(i, irate) = (mx(i) - mx(insperiod)) / dx(1, i)
-        ElseIf i < premperiod Then
-          ì¤€ë¹„ê¸ˆ(i, irate) = (mx(i) - mx(insperiod) - ìˆœì—°ë‚©(irate) * (nxë‚©ë©´(i) - nxë‚©ë©´(premperiod)) + ì˜ì—…ì—°ë‚© * (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) * (nxë‚©ë©´(0) - nxë‚©ë©´(i)) / (nxë‚©ë©´(0) - nxë‚©ë©´(premperiod))) / dx(1, i)
-        Else
-          ì¤€ë¹„ê¸ˆ(i, irate) = (mx(i) - mx(insperiod) + ì˜ì—…ì—°ë‚© * (beta1 + ce1) * (nx(i) - nx(insperiod))) / dx(1, i)
-        End If
-          ì¤€ë¹„ê¸ˆ1ì›(i, irate) = Round(ì¤€ë¹„ê¸ˆ(i, irate) * face)
+For i = 0 To insperiod
+If mangi = 5 Then
+ÁØºñ±İ(i, irate) = (mx(i) - mx(insperiod)) / dx(1, i)
+ElseIf i < premperiod Then
+ÁØºñ±İ(i, irate) = (mx(i) - mx(insperiod) - ¼ø¿¬³³(irate) * (nx³³¸é(i) - nx³³¸é(premperiod)) + ¿µ¾÷¿¬³³ * (beta1 + ce1) * (nx(premperiod) - nx(insperiod)) * (nx³³¸é(0) - nx³³¸é(i)) / (nx³³¸é(0) - nx³³¸é(premperiod))) / dx(1, i)
+Else
+ÁØºñ±İ(i, irate) = (mx(i) - mx(insperiod) + ¿µ¾÷¿¬³³ * (beta1 + ce1) * (nx(i) - nx(insperiod))) / dx(1, i)
+End If
+ÁØºñ±İ1¿ø(i, irate) = Round(ÁØºñ±İ(i, irate) * face)
 Next i
 End Sub
-Sub í‘œì¤€ì¤€ë¹„ê¸ˆê³„ì‚°()
-        For i = 0 To insperiod
-        ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, irate) = Round(ì¤€ë¹„ê¸ˆ(i, irate) * face)
-        ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, irate) = Application.Max(ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, irate), 0)
-        í•´ì§€ê³µì œê¸°ê°„ = Application.Min(7, premperiod)
-        í™˜ê¸‰ê¸ˆ_í‘œì¤€(i, irate) = Application.Max(ì¤€ë¹„ê¸ˆ_í‘œì¤€(i, irate) - IIf(i > í•´ì§€ê³µì œê¸°ê°„, 0, Application.RoundDown((í•´ì§€ê³µì œê¸°ê°„ - i) / í•´ì§€ê³µì œê¸°ê°„ * Application.Min(Application.RoundDown(ì‹ ê³„ì•½ë¹„í•œë„, 0), ì‚¬ìš©ì‹ ê³„ì•½ë¹„), 0)), 0)
+Sub Ç¥ÁØÁØºñ±İ°è»ê()
+For i = 0 To insperiod
+ÁØºñ±İ_Ç¥ÁØ(i, irate) = Round(ÁØºñ±İ(i, irate) * face)
+ÁØºñ±İ_Ç¥ÁØ(i, irate) = Application.Max(ÁØºñ±İ_Ç¥ÁØ(i, irate), 0)
+ÇØÁö°øÁ¦±â°£ = Application.Min(7, premperiod)
+È¯±Ş±İ_Ç¥ÁØ(i, irate) = Application.Max(ÁØºñ±İ_Ç¥ÁØ(i, irate) - IIf(i > ÇØÁö°øÁ¦±â°£, 0, Application.RoundDown((ÇØÁö°øÁ¦±â°£ - i) / ÇØÁö°øÁ¦±â°£ * Application.Min(Application.RoundDown(½Å°è¾àºñÇÑµµ, 0), »ç¿ë½Å°è¾àºñ), 0)), 0)
 Next i
 
 End Sub
